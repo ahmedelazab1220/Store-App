@@ -1,12 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/colors.dart';
-import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/styles.dart';
+import 'package:storeapp/Features/onBoarding/presentation/view/widgets/smooth_page_indicator.dart';
 import 'package:storeapp/Features/onBoarding/presentation/view_model/on_boarding_cubit.dart';
 
 class OnBoardingViewContainerBody extends StatelessWidget {
@@ -45,7 +44,7 @@ class OnBoardingViewContainerBody extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          SvgPicture.asset(AppImages.kOnBoardingOneCirclePoint),
+          const CustomSmoothPageIndicator(),
           const SizedBox(
             height: 15,
           ),

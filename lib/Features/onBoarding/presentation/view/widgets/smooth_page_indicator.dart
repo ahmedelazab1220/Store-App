@@ -18,11 +18,13 @@ class _CustomSmoothPageIndicatorState extends State<CustomSmoothPageIndicator> {
     return SmoothPageIndicator(
       controller: BlocProvider.of<OnBoardingCubit>(context).pageController,
       count: 3,
-      effect: ExpandingDotsEffect(
-        dotColor: AppColors.white.withOpacity(0.4),
-        activeDotColor: AppColors.white,
-        dotHeight: 20,
-        dotWidth: 20,
+      textDirection: TextDirection.rtl,
+      effect: WormEffect(
+        type: WormType.thinUnderground,
+        dotColor: AppColors.grey,
+        activeDotColor: AppColors.smoothIndicator,
+        dotHeight: MediaQuery.of(context).size.height * 0.0121,
+        dotWidth: MediaQuery.of(context).size.width * 0.019,
         offset: 40,
         spacing: 6,
       ),

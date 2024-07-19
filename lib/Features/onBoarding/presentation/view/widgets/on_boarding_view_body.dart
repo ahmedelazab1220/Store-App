@@ -15,8 +15,8 @@ class OnBoardingViewBody extends StatelessWidget {
           image: onBoardingData[index].image,
           skip: onBoardingData[index].skip,
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.015,
         ),
         OnBoardingViewContainerBody(
           title: onBoardingData[index].title,
