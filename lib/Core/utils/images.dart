@@ -1,4 +1,5 @@
 abstract class AppImages {
+  static const String kAppLogo = "assets/icons/app_logo.svg";
   static const String kPrimaryLogo = "assets/icons/app_main_icon.svg";
   static const String kOnBoarding1 = "assets/images/onBoarding1.png";
   static const String kOnBoarding2 = "assets/images/onBoarding2.png";
