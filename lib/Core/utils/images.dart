@@ -1,6 +1,10 @@
 abstract class AppImages {
-  static const String kPrimaryLogo = "assets/images/splash-main-logo.svg";
-  static const String kSplashOne = "assets/images/splash-on-one.svg";
-  static const String kSplashTwo = "assets/images/splash-on-two.svg";
-  static const String kSplashThree = "assets/images/splash-on-three.svg";
+  static const String kPrimaryLogo = "assets/images/app_share_icon.svg";
+  static const String kOnBoarding1 = "assets/images/onBoarding1.png";
+  static const String kOnBoarding2 = "assets/images/onBoarding2.png";
+  static const String kOnBoarding3 = "assets/images/onBoarding3.png";
+  static const String konboardingBackground =
+      "assets/images/background-on-boarding.png";
+  static const String kOnBoardingOneCirclePoint =
+      "assets/images/onBoardingOneCriclePoint.svg";
 }
