@@ -8,6 +8,12 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
 
   final PageController pageController = PageController();
 
+  @override
+  Future<void> close() {
+    pageController.dispose();
+    return super.close();
+  }
+
   int currentPage = 0;
   getCurrentPageViewIndex(c) {
     currentPage = c;

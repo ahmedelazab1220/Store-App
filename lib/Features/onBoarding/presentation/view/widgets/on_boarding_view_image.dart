@@ -53,7 +53,7 @@ class OnBoardingViewImage extends StatelessWidget {
                       padding: EdgeInsets.only(
                         right: screen.width * 0.15,
                         left: screen.width * 0.09,
-                        bottom: screen.height * 0.05,
+                        bottom: screen.height * 0.03,
                       ),
                       child: FadeInDown(
                         child: AspectRatio(
