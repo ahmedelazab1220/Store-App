@@ -70,7 +70,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(AppImages.kPrimaryLogo),
+            SvgPicture.asset(AppImages.kAppLogo),
             SlidingText(slidingAnimation: slidingAnimation),
           ],
         ),
