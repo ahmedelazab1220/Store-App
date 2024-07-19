@@ -1,9 +1,10 @@
 abstract class AppImages {
-  static const String kPrimaryLogo = "assets/images/splash-main-logo.svg";
-  static const String kOnOneScreen = "assets/images/on-one-screen.png";
-  static const String kOnTwoScreen = "assets/images/on-two-screen.svg";
-  static const String kOnThreeScreen = "assets/images/on-three-screen.svg";
-  static const String kRectangleOnOneScreen =
-      "assets/images/background-on-one-screen.png";
-  static const String kOnePoint = "assets/images/one-point.svg";
+  static const String kPrimaryLogo = "assets/images/app_share_icon.svg";
+  static const String kOnBoarding1 = "assets/images/onBoarding1.png";
+  static const String kOnBoarding2 = "assets/images/onBoarding2.png";
+  static const String kOnBoarding3 = "assets/images/onBoarding3.png";
+  static const String konboardingBackground =
+      "assets/images/background-on-boarding.png";
+  static const String kOnBoardingOneCirclePoint =
+      "assets/images/onBoardingOneCriclePoint.svg";
 }

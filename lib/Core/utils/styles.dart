@@ -14,6 +14,7 @@ abstract class Styles {
   static final textStyle20 = GoogleFonts.almarai(
     fontSize: 20,
     fontWeight: FontWeight.w700,
+    color: AppColors.onBoardingTitleText,
   );
 
   static final textStyle19 = GoogleFonts.almarai(

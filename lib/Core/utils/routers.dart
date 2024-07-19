@@ -1,10 +1,10 @@
 import 'package:go_router/go_router.dart';
-import 'package:storeapp/Features/onScreen/presentation/view/on_one_screen.dart';
+import 'package:storeapp/Features/onBoarding/presentation/view/on_boarding_screen.dart';
 import 'package:storeapp/Features/splash/presentation/view/splash_screen.dart';
 
 abstract class AppRouter {
   static const String kSplashScreen = '/';
-  static const String kOnOneScreen = '/OnOneScreen';
+  static const String kOnBoardingScreen = '/OnBoardingScreen';
 
   static final router = GoRouter(
     routes: [
@@ -13,8 +13,8 @@ abstract class AppRouter {
         builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
-        path: kOnOneScreen,
-        builder: (context, state) => const OnOneScreen(),
+        path: kOnBoardingScreen,
+        builder: (context, state) => const OnBoardingScreen(),
       ),
     ],
   );

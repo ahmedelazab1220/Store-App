@@ -47,7 +47,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).push(AppRouter.kOnOneScreen);
+        GoRouter.of(context).pushReplacement(AppRouter.kOnBoardingScreen);
       },
     );
   }
