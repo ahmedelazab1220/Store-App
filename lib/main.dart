@@ -10,10 +10,7 @@ void main() {
   Bloc.observer = SimpleBlocObserver();
   setup();
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const StoreApp(), // Wrap your app
-    ),
+    const StoreApp(),
   );
 }
 
@@ -24,7 +21,6 @@ class StoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
     );
