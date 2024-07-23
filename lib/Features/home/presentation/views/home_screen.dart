@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xff1A48BF), Color(0xff731BCD)],
             begin: Alignment.topLeft,
@@ -61,13 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
           showUnselectedLabels: true,
         ),
       ),
-      body: HomeScreenBody(),
+      body: const HomeScreenBody(),
     );
   }
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: HomeScreen(),
   ));
 }

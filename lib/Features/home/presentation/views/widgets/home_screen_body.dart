@@ -22,7 +22,7 @@ class HomeScreenBody extends StatelessWidget {
                     Row(
                       children: [
                         GestureDetector(child: SvgPicture.asset("assets/icons/car_shoping_icon.svg"), onTap: (){},),
-                        SizedBox(width: 24,),
+                        const SizedBox(width: 24,),
                         GestureDetector(child: Stack(
                           alignment: Alignment.topRight,
                           children: [
@@ -32,7 +32,7 @@ class HomeScreenBody extends StatelessWidget {
                             const CircleAvatar(radius: 3,backgroundColor: AppColors.lILACSPRINGColor,),
                           ],
                         ), onTap: (){},),
-                        Spacer(),
+                        const Spacer(),
                         GestureDetector(child: SvgPicture.asset("assets/icons/drawer_icon.svg"), onTap: (){},),
                       ],
                     ),
@@ -51,26 +51,26 @@ class HomeScreenBody extends StatelessWidget {
                 // Navigate to the new page
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                padding: EdgeInsets.symmetric(horizontal: 17,vertical: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 17,vertical: 16),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Color(0xffBCB7B7),
+                    color: const Color(0xffBCB7B7),
                     width: 0.8,
                   )
                 ),
                 child: Row(
                   textDirection: TextDirection.rtl,
                   children: [
-                    Icon(Icons.search,
+                    const Icon(Icons.search,
                     color: Color(0xffBCB7B7),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Text("ابحث عن طلباتك",
                     textAlign: TextAlign.right,
                       style: GoogleFonts.almarai(
-                        color: Color(0xff8E8E8E80).withOpacity(0.5),
+                        color: const Color(0xff8e8e8e80).withOpacity(0.5),
                         fontSize: 15,
                         fontWeight: FontWeight.w400, // 700
                       ),
@@ -84,16 +84,16 @@ class HomeScreenBody extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                  Container(
-                  padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 40),
-                  margin: EdgeInsets.only(top: 24, right: 18, bottom: 10,left: 18),
+                  padding: const EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 40),
+                  margin: const EdgeInsets.only(top: 24, right: 18, bottom: 10,left: 18),
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Color(0xffF3F6FD)
+                      color: const Color(0xffF3F6FD)
                   ),
                   child: Row(
                     children: [
-                      Expanded(
+                      const Expanded(
                         child: Image(image: AssetImage("assets/images/breads.png"),
                           width:155 ,
                           height:103 ,
@@ -109,17 +109,17 @@ class HomeScreenBody extends StatelessWidget {
                               style: GoogleFonts.almarai(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w700, // 700
-                                  color: Color(0xff6520CD)
+                                  color: const Color(0xff6520CD)
                               ),
                             ),
-                            SizedBox(height: 10,),
+                            const SizedBox(height: 10,),
                             Text(
                               "خيار مثالي لتناول وجبة خفيفة لذيذة في اي وقت",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.right,
                               style: GoogleFonts.almarai(
-                                color: Color(0xff626262B2).withOpacity(0.7),
+                                color: const Color(0xff626262b2).withOpacity(0.7),
                                 fontSize: 13,
                                 fontWeight: FontWeight.w700, // 700
                               ),
@@ -134,8 +134,8 @@ class HomeScreenBody extends StatelessWidget {
                    right: 19,
                    bottom: 11,
                    child: Container(
-                     padding: EdgeInsets.all(10),
-                     decoration: BoxDecoration(
+                     padding: const EdgeInsets.all(10),
+                     decoration: const BoxDecoration(
                        borderRadius: BorderRadius.only(
                                            topLeft: Radius.circular(35),
                                            topRight: Radius.circular(0),
@@ -161,7 +161,7 @@ class HomeScreenBody extends StatelessWidget {
               ]
             ),
 
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
             SizedBox(
               width:double.infinity,
@@ -173,7 +173,7 @@ class HomeScreenBody extends StatelessWidget {
                 textAlign: TextAlign.right,
                 textDirection: TextDirection.rtl,
                 style:   GoogleFonts.almarai(
-                  color: Color(0xff615D5D),
+                  color: const Color(0xff615D5D),
                     fontSize: 15,
                     fontWeight: FontWeight.w700, // 700
                   ),
@@ -181,7 +181,7 @@ class HomeScreenBody extends StatelessWidget {
             ),
             ),
 
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
             SizedBox(
               height: MediaQuery.of(context).size.height*0.135,
@@ -190,123 +190,123 @@ class HomeScreenBody extends StatelessWidget {
                 children: [
                     Column(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                            radius: 35,
                            backgroundColor: Color(0xffF3F5FC),
                            child: Image(image: AssetImage("assets/images/company/pepsi.png"),)
                          ),
-                        SizedBox(height: 2,),
+                        const SizedBox(height: 2,),
                         Text("بيبسي",
                         style:   GoogleFonts.almarai(
-                            color: Color(0xff8E8E8E),
+                            color: const Color(0xff8E8E8E),
                             fontSize: 11,
                             fontWeight: FontWeight.w700, // 700
                           ),
                         )
                       ],
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/shipsy.png"),)
                                         ),
-                        SizedBox(height: 2,),
+                        const SizedBox(height: 2,),
                         Text("بيبسي",
                           style:   GoogleFonts.almarai(
-                            color: Color(0xff8E8E8E),
+                            color: const Color(0xff8E8E8E),
                             fontSize: 11,
                             fontWeight: FontWeight.w700, // 700
                           ),
                         )
                       ],
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/molto.png"),)
                                         ),
-                        SizedBox(height: 2,),
+                        const SizedBox(height: 2,),
                         Text("بيبسي",
                           style:   GoogleFonts.almarai(
-                            color: Color(0xff8E8E8E),
+                            color: const Color(0xff8E8E8E),
                             fontSize: 11,
                             fontWeight: FontWeight.w700, // 700
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/cocacola.png"),)
-                                        ),SizedBox(height: 2,),
+                                        ),const SizedBox(height: 2,),
 
                         Text("بيبسي",
                           style:   GoogleFonts.almarai(
-                            color: Color(0xff8E8E8E),
+                            color: const Color(0xff8E8E8E),
                             fontSize: 11,
                             fontWeight: FontWeight.w700, // 700
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/shipsy.png"),)
                       ),
-                      SizedBox(height: 2,),
+                      const SizedBox(height: 2,),
                       Text("بيبسي",
                         style:   GoogleFonts.almarai(
-                          color: Color(0xff8E8E8E),
+                          color: const Color(0xff8E8E8E),
                           fontSize: 11,
                           fontWeight: FontWeight.w700, // 700
                         ),
                       )
                     ],
                   ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/molto.png"),)
                       ),
-                      SizedBox(height: 2,),
+                      const SizedBox(height: 2,),
                       Text("بيبسي",
                         style:   GoogleFonts.almarai(
-                          color: Color(0xff8E8E8E),
+                          color: const Color(0xff8E8E8E),
                           fontSize: 11,
                           fontWeight: FontWeight.w700, // 700
                         ),
                       ),
                     ],
                   ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Column(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xffF3F5FC),
                           child: Image(image: AssetImage("assets/images/company/cocacola.png"),)
                       ),
-                      SizedBox(height: 2,),
+                      const SizedBox(height: 2,),
                       Text("بيبسي",
                         style:   GoogleFonts.almarai(
-                          color: Color(0xff8E8E8E),
+                          color: const Color(0xff8E8E8E),
                           fontSize: 11,
                           fontWeight: FontWeight.w700, // 700
                         ),
@@ -317,7 +317,7 @@ class HomeScreenBody extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
 
             SizedBox(
               width:double.infinity,
@@ -329,7 +329,7 @@ class HomeScreenBody extends StatelessWidget {
                   textAlign: TextAlign.right,
                   textDirection: TextDirection.rtl,
                   style:   GoogleFonts.almarai(
-                    color: Color(0xff615D5D),
+                    color: const Color(0xff615D5D),
                     fontSize: 15,
                     fontWeight: FontWeight.w700, // 700
                   ),
@@ -341,8 +341,8 @@ class HomeScreenBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: GridView.builder(
                 shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, // Number of items per row
                     crossAxisSpacing: 24,
                     mainAxisSpacing: 20,// Spacing between items horizontally
@@ -350,9 +350,9 @@ class HomeScreenBody extends StatelessWidget {
                   ), itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffEDF1F8),
+                    color: const Color(0xffEDF1F8),
                 ),
-                child: Column(
+                child: const Column(
                   children: [
                     Image(image: AssetImage("assets/images/bride_in_basket.png"),
                      width: 150,
