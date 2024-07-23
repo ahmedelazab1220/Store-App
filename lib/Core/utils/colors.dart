@@ -8,4 +8,5 @@ abstract class AppColors {
   static const Color grey = Color(0xFF9BA6A7);
   static const Color onBoardingTitleText = Color(0xFF6A6565);
   static const Color smoothIndicator = Color(0xFF6B1ECD);
+  static const Color   lILACSPRINGColor= Color(0xff8016CD);
 }

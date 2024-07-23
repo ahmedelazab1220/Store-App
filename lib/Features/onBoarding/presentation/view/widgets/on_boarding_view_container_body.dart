@@ -68,7 +68,7 @@ class OnBoardingViewContainerBody extends StatelessWidget {
                         );
                   } else {
                     GoRouter.of(context)
-                        .pushReplacement(AppRouter.kSplashScreen);
+                        .pushReplacement(AppRouter.kHomeScreen);
                   }
                 },
                 style: TextButton.styleFrom(
