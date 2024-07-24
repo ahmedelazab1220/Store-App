@@ -65,4 +65,47 @@ abstract class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+
+  static final textStyle17 = GoogleFonts.almarai(
+    color: const Color(0xff8e8e8e80).withOpacity(0.5),
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final textStyle30 = GoogleFonts.almarai(
+      fontSize: 15,
+      fontWeight: FontWeight.w700, // 700
+      color: const Color(0xff6520CD)
+  );
+
+  static final textStyle31 = GoogleFonts.almarai(
+    color: const Color(0xff626262b2).withOpacity(0.7),
+    fontSize: 13,
+    fontWeight: FontWeight.w700, // 700
+  );
+
+  static final textStyle32 = GoogleFonts.almarai(
+    color: Colors.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w700, // 700
+  );
+
+  static final textStyle33 = GoogleFonts.almarai(
+    color: const Color(0xff615D5D),
+    fontSize: 15,
+    fontWeight: FontWeight.w700, // 700
+  );
+
+  static final textStyle34 =  GoogleFonts.almarai(
+    color: const Color(0xff8E8E8E),
+    fontSize: 11,
+    fontWeight: FontWeight.w700, // 700
+  );
+
+  static final textStyle35 =  GoogleFonts.almarai(
+      fontWeight: FontWeight.w700,
+      fontSize: 14,
+      color: const Color(0xff615D5D),
+  );
+
 }

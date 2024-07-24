@@ -23,4 +23,6 @@ abstract class AppText {
   static const String login = 'تسجيل الدخول';
   static const String register = 'انشاء حساب';
   static const String titleRegisterScreen = 'حساب جديد';
+  static const String searchForOrderScreen = "ابحث عن طلباتك";
+  static const String companies = "الشركات";
 }

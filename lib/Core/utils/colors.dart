@@ -9,4 +9,11 @@ abstract class AppColors {
   static const Color onBoardingTitleText = Color(0xFF6A6565);
   static const Color smoothIndicator = Color(0xFF6B1ECD);
   static const Color   lILACSPRINGColor= Color(0xff8016CD);
+  static const Color   greyCloudColor= Color(0xffBCB7B7);
+  static const Color   aliceBlueColor= Color(0xffF3F6FD);
+  static const Color   bluePurpleColor= Color(0xff731BCD);
+  static const Color   purpleHeartColor= Color(0xff5426CD);
+  static const Color   magnoliaColor= Color(0xffF3F5FC);
+  static const Color   porcelainColor= Color(0xffEDF1F8);
+  static const Color   violetBlueColor= Color(0xff6B1ECD);
 }

@@ -38,23 +38,24 @@ class _HomeScreenState extends State<HomeScreen> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: 'الرئيسيه',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.construction),
-              label: 'Construction',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: 'Add',
+              icon: Icon(Icons.discount),
+              label: 'الخصومات',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.add),
-              label: 'More',
+              label: 'السلة',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'حسابي',
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
           onTap: _onItemTapped,
           backgroundColor: Colors.transparent,
           type: BottomNavigationBarType.fixed,
@@ -62,6 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: const HomeScreenBody(),
+      endDrawer: const Drawer(
+        child: Column(),
+      ),
     );
   }
 }
@@ -71,17 +75,3 @@ void main() {
     home: HomeScreen(),
   ));
 }
-
-/*
-  floatingActionButton: FloatingActionButton(onPressed: () {  },
-        //params
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        icons: [Icons.cabin,Icons.construction,Icons.add],
-        activeIndex: 2,
-        gapLocation: GapLocation.end,
-        notchSmoothness: NotchSmoothness.defaultEdge, onTap: (int ) {  },
-        //other params
-      ),
- */
