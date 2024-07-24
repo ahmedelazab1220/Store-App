@@ -66,6 +66,12 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
 
+  static final textStyle9 = GoogleFonts.inter(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xff615D5D),
+  );
+
   static final textStyle17 = GoogleFonts.almarai(
     color: const Color(0xff8e8e8e80).withOpacity(0.5),
     fontSize: 15,
@@ -106,6 +112,27 @@ abstract class Styles {
       fontWeight: FontWeight.w700,
       fontSize: 14,
       color: const Color(0xff615D5D),
+  );
+  static final textStyle36 =  GoogleFonts.almarai(
+      fontWeight: FontWeight.w700,
+      fontSize: 17,
+      color: AppColors.white,
+  );
+
+  static final textStyle37 =  GoogleFonts.almarai(
+      fontWeight: FontWeight.w400,
+      fontSize: 11,
+      color: AppColors.onBoardingTitleText.withOpacity(0.8)
+  );
+  static final textStyle38 =  GoogleFonts.almarai(
+      fontWeight: FontWeight.w700,
+      fontSize: 17,
+      color: const Color(0xff6B6868),
+  );
+  static final textStyle39 =  GoogleFonts.almarai(
+    fontWeight: FontWeight.w400,
+    fontSize: 11,
+    color: const Color(0xff6A6565).withOpacity(0.8),
   );
 
 }

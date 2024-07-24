@@ -25,4 +25,6 @@ abstract class AppText {
   static const String titleRegisterScreen = 'حساب جديد';
   static const String searchForOrderScreen = "ابحث عن طلباتك";
   static const String companies = "الشركات";
+  static const String mrCandy = "Mr.candy";
+  static const String notification = "الأشعارات";
 }

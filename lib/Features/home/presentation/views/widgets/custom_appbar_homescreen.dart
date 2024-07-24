@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
-import 'package:storeapp/Features/notification/presentation/views/notification_screen.dart';
+import '../../../../../Core/shared_widget/notifaction_and_dot.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/routers.dart';
 
@@ -31,22 +31,12 @@ class CustomAppbarHomeScreen extends StatelessWidget {
                       onTap: (){},
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width*0.07,),
-                    GestureDetector(child: Stack(
-                      alignment: Alignment.topRight,
-                      children: [
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width*0.07,
-                            child: GestureDetector(
-                                onTap: (){
-                                  GoRouter.of(context)
-                                      .push(AppRouter.kNotification);
-                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
+                    NotificationAndDot(colorDot:   AppColors.lILACSPRINGColor, imageNotification:SvgPicture.asset(AppImages.kNoticesIcon) ,onTap: (){
+                      GoRouter.of(context)
+                          .push(AppRouter.kNotification);
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
 
-                                },
-                                child: SvgPicture.asset(AppImages.kNoticesIcon))),
-                        const CircleAvatar(radius: 3,backgroundColor: AppColors.lILACSPRINGColor,),
-                      ],
-                    ), onTap: (){},),
+                    },),
                     const Spacer(),
                     GestureDetector(child: SvgPicture.asset(AppImages.kDrawerIcon), onTap: () => Scaffold.of(context).openEndDrawer(),),
                   ],
