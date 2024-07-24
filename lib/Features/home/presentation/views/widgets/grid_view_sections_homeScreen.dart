@@ -7,22 +7,23 @@ class GridViewSectionsHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const
-        SliverGridDelegateWithFixedCrossAxisCount(
+      sliver: SliverGrid(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // Number of items per row
           crossAxisSpacing: 24,
-          mainAxisSpacing: 20,// Spacing between items horizontally
+          mainAxisSpacing: 20, // Spacing between items horizontally
           childAspectRatio: 1.1, // Aspect ratio of items (square in this case)
         ),
-        itemBuilder: (context, index) {
-          return BodyItemBuilderGridviewSections(sectionsModel: sectionsList[index],);
-        },
-        itemCount:sectionsList.length,
+        delegate: SliverChildBuilderDelegate(
+              (context, index) {
+            return BodyItemBuilderGridviewSections(
+              sectionsModel: sectionsList[index],
+            );
+          },
+          childCount: sectionsList.length,
+        ),
       ),
     );
   }

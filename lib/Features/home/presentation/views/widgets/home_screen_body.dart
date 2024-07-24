@@ -13,30 +13,28 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  const SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
+      child: CustomScrollView(
+        slivers: [
 
-            CustomAppbarHomeScreen(),
+          SliverToBoxAdapter(child: CustomAppbarHomeScreen()),
 
-            CrauserSliderBannerHomeScreen(),
+          SliverToBoxAdapter(child: CrauserSliderBannerHomeScreen()),
 
-            SizedBox(height: 10,),
+          SliverToBoxAdapter(child: SizedBox(height: 10,)),
 
-             CustomTextHomeScreen(text: AppText.companies),
+          SliverToBoxAdapter(child: CustomTextHomeScreen(text: AppText.companies)),
 
-            SizedBox(height: 10,),
+          SliverToBoxAdapter(child: SizedBox(height: 10,)),
 
-            ListCompaniesHomScreen(),
+          SliverToBoxAdapter(child: ListCompaniesHomScreen()),
 
-            SizedBox(height: 5,),
+          SliverToBoxAdapter(child: SizedBox(height: 5,)),
 
-            CustomTextHomeScreen(text: "الأقسام",),
+          SliverToBoxAdapter(child: CustomTextHomeScreen(text: "الأقسام",)),
 
-            GridViewSectionsHomeScreen(),
+          GridViewSectionsHomeScreen(),
 
-          ],
-        ),
+        ]
       ),
     );
   }
