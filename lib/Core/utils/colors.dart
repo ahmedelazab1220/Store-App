@@ -16,4 +16,5 @@ abstract class AppColors {
   static const Color   magnoliaColor= Color(0xffF3F5FC);
   static const Color   porcelainColor= Color(0xffEDF1F8);
   static const Color   violetBlueColor= Color(0xff6B1ECD);
+  static const Color   periwinkleColor= Color(0xffC4D2F3);
 }

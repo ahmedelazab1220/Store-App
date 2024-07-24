@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
+import 'package:storeapp/Features/notification/presentation/views/notification_screen.dart';
 import '../../../../../Core/utils/colors.dart';
+import '../../../../../Core/utils/routers.dart';
 
 class CustomAppbarHomeScreen extends StatelessWidget {
   const CustomAppbarHomeScreen({super.key});
@@ -33,7 +36,14 @@ class CustomAppbarHomeScreen extends StatelessWidget {
                       children: [
                         SizedBox(
                             width: MediaQuery.of(context).size.width*0.07,
-                            child: SvgPicture.asset(AppImages.kNoticesIcon)),
+                            child: GestureDetector(
+                                onTap: (){
+                                  GoRouter.of(context)
+                                      .push(AppRouter.kNotification);
+                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
+
+                                },
+                                child: SvgPicture.asset(AppImages.kNoticesIcon))),
                         const CircleAvatar(radius: 3,backgroundColor: AppColors.lILACSPRINGColor,),
                       ],
                     ), onTap: (){},),

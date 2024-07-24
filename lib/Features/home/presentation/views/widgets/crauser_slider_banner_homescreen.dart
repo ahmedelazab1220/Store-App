@@ -52,7 +52,7 @@ class _BannerHomeScreenState extends State<CrauserSliderBannerHomeScreen> {
                     height: 15,
                     width:i==currentPage?12 :8,
                     decoration: BoxDecoration(
-                        color: i==currentPage? AppColors.violetBlueColor: const Color(0xffC4D2F3),
+                        color: i==currentPage? AppColors.violetBlueColor:  AppColors.periwinkleColor,
                         shape: BoxShape.circle
                     ),
                   ),
@@ -65,75 +65,3 @@ class _BannerHomeScreenState extends State<CrauserSliderBannerHomeScreen> {
     );
   }
 }
-
-/*
-
-Stack(
-        alignment: Alignment.bottomRight,
-        children: [
-          Container(
-            padding: const EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 40),
-            margin: const EdgeInsets.only(top: 24, right: 18, bottom: 10,left: 18),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: AppColors.aliceBlueColor
-            ),
-            child: Row(
-              children: [
-                 Expanded(
-                  child: Image(image: AssetImage("assets/images/breads.png"),
-                    width:MediaQuery.of(context).size.width*0.2 ,
-                    height:MediaQuery.of(context).size.height*0.13 ,
-                  ),
-                ),
-                 SizedBox(
-                  width: MediaQuery.of(context).size.width*0.4,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text("مخبوزات فريش",
-                        textAlign: TextAlign.right,
-                        style: Styles.textStyle30,
-                      ),
-                      const SizedBox(height: 10,),
-                      Text(
-                        "خيار مثالي لتناول وجبة خفيفة لذيذة في اي وقت",
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.right,
-                        style: Styles.textStyle31
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-          Positioned(
-            right: 19,
-            bottom: 11,
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(35),
-                      topRight: Radius.circular(0),
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(20)
-                  ),
-                  gradient: LinearGradient(
-                      colors: [
-                        AppColors.bluePurpleColor,
-                        AppColors.purpleHeartColor,
-                      ]
-                  )
-              ),
-              child:   Text( '%خصم 20',
-                style: Styles.textStyle32
-              ),
-            ),
-          ),
-        ]
-    );
- */
