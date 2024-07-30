@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../utils/images.dart';
-
-// ignore: must_be_immutable
 class NotificationAndDot extends StatelessWidget {
-   NotificationAndDot({super.key, required this.colorDot, required this.widget, this.onTap});
-   final Color colorDot;
-   final Widget widget;
-  Function()? onTap;
+  NotificationAndDot({
+    super.key,
+    required this.colorDot,
+    required this.widget,
+    this.onTap,
+  });
+
+  final Color colorDot;
+  final Widget widget;
+  final Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Stack(
         alignment: Alignment.topRight,
         children: [
           SizedBox(
-              width: MediaQuery.of(context).size.width*0.07,
-              child: GestureDetector(
-                  onTap: onTap,
-                  child: SvgPicture.asset(AppImages.kNoticesIcon))
+            width: MediaQuery.of(context).size.width * 0.07,
+            child: widget,
           ),
-           CircleAvatar(radius: 3,backgroundColor:colorDot,),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: CircleAvatar(
+              radius: 3,
+              backgroundColor: colorDot,
+            ),
+          ),
         ],
-      ), onTap: (){},);
+      ),
+    );
   }
 }

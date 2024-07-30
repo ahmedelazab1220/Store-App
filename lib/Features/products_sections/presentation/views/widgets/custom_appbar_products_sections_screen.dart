@@ -12,9 +12,8 @@ class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 22),
       child: Container(
-          padding: const EdgeInsets.only(top: 60),
+          padding: const EdgeInsets.only(top: 30,bottom: 22),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.27,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0),
@@ -36,12 +35,16 @@ class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Spacer(),
-                  Text(
-                    "المشروبات",
-                    style: Styles.textStyle36,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 35),
+                      child: Text(
+                        "المشروبات",
+                        textAlign: TextAlign.center,
+                        style: Styles.textStyle36,
+                      ),
+                    ),
                   ),
-                  const Spacer(),
                   IconButton(
                       onPressed: () {
                         Navigator.pop(context);
@@ -50,9 +53,7 @@ class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
                         Icons.arrow_forward_ios,
                         color: AppColors.white,
                       )),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.05,
-                  ),
+                
                 ],
               ),
               const SizedBox(

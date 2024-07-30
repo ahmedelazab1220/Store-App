@@ -14,9 +14,9 @@ class CustomAppbarNotificationScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: Container(
-        padding: const EdgeInsets.only(top: 30),
+         padding: const EdgeInsets.only(top: 40,bottom: 20,left: 60
+         ),
         width: double.infinity,
-        height: MediaQuery.of(context).size.height*0.18,
         decoration:const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(0),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:storeapp/Core/shared_widget/custom_field.dart';
 import '../../../../../Core/utils/colors.dart';
@@ -11,9 +12,8 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
     return  Padding(
       padding: const EdgeInsets.only(bottom: 22),
       child: Container(
-          padding: const EdgeInsets.only(top: 60),
+          padding:  EdgeInsets.only(top:45,bottom: 16),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.3,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0),

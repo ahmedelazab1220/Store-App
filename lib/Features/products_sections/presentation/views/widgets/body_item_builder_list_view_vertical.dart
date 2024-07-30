@@ -13,8 +13,7 @@ class BodyItemBuilderListViewVertical extends StatelessWidget {
       children: [
         Stack(children: [
           Container(
-            margin:
-            const EdgeInsets.symmetric(horizontal: 23, vertical: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 23, vertical: 5),
             padding: const EdgeInsets.only(top: 16, bottom: 23),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -56,7 +55,8 @@ class BodyItemBuilderListViewVertical extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           children: [
                             Text(
-                              " : السعر",
+                              " السعر :",
+                              textDirection: TextDirection.rtl,
                               style: Styles.textStyle35,
                             ),
                             Text(

@@ -14,7 +14,7 @@ class BodyItemBuilderCompanyList extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         GoRouter.of(context)
-            .pushReplacement(AppRouter.kProductsCompanyScreen);
+            .push(AppRouter.kProductsCompanyScreen);
       },
       child: Column(
         children: [

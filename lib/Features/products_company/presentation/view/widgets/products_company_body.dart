@@ -14,6 +14,7 @@ class ProductsCompanyBody extends StatelessWidget {
      slivers: [
        SliverToBoxAdapter(child: CustomAppBarProductsCompanyScreen()),
        SliverToBoxAdapter(child: ListProductHorizontal()),
+       SliverToBoxAdapter(child: SizedBox(height: 10,)),
        SliverToBoxAdapter(child: CustomDivider()),
        SliverToBoxAdapter(child: SizedBox(height: 10,)),
        ListItemsOfProductVertical(),
