@@ -5,6 +5,7 @@ import 'package:storeapp/Features/onBoarding/presentation/view/on_boarding_scree
 import 'package:storeapp/Features/splash/presentation/view/splash_screen.dart';
 
 import '../../Features/products_company/presentation/view/view.dart';
+import '../../Features/products_sections/presentation/views/view.dart';
 
 abstract class AppRouter {
   static const String kSplashScreen = '/';
@@ -12,6 +13,7 @@ abstract class AppRouter {
   static const String kHomeScreen = '/HomeScreen';
   static const String kNotification = '/Notification';
   static const String kProductsCompanyScreen = '/ProductsCompanyScreen';
+  static const String kProductsSectionScreen = '/ProductsSectionScreen';
 
   static final router = GoRouter(
     routes: [
@@ -34,6 +36,10 @@ abstract class AppRouter {
       GoRoute(
         path: kProductsCompanyScreen,
         builder: (context, state) => const ProductsCompanyScreen(),
+      ),
+      GoRoute(
+        path: kProductsSectionScreen,
+        builder: (context, state) => const ProductsSectionScreen(),
       ),
     ],
   );

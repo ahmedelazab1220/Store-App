@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../Core/utils/styles.dart';
+import 'body_itembuilder_prducts_hotizontal.dart';
 
 class ListProductHorizontal extends StatelessWidget {
   const ListProductHorizontal({super.key});
@@ -11,23 +12,7 @@ class ListProductHorizontal extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return  Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundColor: const Color(0xff2151A1).withOpacity(0.05),
-                  child: const Image(image: AssetImage("assets/images/chipsy_item.png"),
-                    width: 23,
-                    height: 33,
-                  ),
-                ),
-                const SizedBox(height: 10,),
-                Text("شطة وليمون",
-                  style: Styles.textStyle41,
-                )
-              ],
-            );
+            return const BodyItemBuilderProductsHorizontal();
           },
           separatorBuilder: (context, index) => const SizedBox(width: 16,),
           itemCount:10,

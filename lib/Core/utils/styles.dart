@@ -154,5 +154,9 @@ abstract class Styles {
     fontSize: 15,
     color: const Color(0xff5941AF),
   );
-
+  static final textStyle45 = GoogleFonts.almarai(
+      fontSize: 15,
+      fontWeight: FontWeight.w700, // 700
+      color: const Color(0xff5129A7)
+  );
 }

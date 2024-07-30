@@ -34,9 +34,9 @@ class BodyItemBuilderItemsOfProductList extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("عبوة شيبسي حجم 10 ج",
+                        Text("عبوة شيبسي حجم 10 جنيه ",
                           textDirection: TextDirection.rtl,
-                          maxLines: 1,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: Styles.textStyle42,
                         ),

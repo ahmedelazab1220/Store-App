@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:storeapp/Core/shared_widget/custom_field.dart';
+
+import '../../../../../Core/shared_widget/custom_field.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
-class CustomAppBarProductsCompanyScreen extends StatelessWidget {
-  const CustomAppBarProductsCompanyScreen({super.key});
+class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
+  const  CustomAppbarProductsSectionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.only(bottom: 22),
       child: Container(
           padding: const EdgeInsets.only(top: 60),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 0.27,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0),
@@ -36,24 +37,8 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Spacer(),
-                  const Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      CircleAvatar(
-                        radius: 25,
-                        backgroundColor: AppColors.white,
-                      ),
-                      Image(image: AssetImage("assets/images/chiosy_product_scr_appbar.png"),
-                        height: 50,
-                        width: 50,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 12,
-                  ),
                   Text(
-                    "شيبسي",
+                    "المشروبات",
                     style: Styles.textStyle36,
                   ),
                   const Spacer(),
@@ -70,11 +55,12 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 30,),
-              CustomField(hintText:  "ابحث عن منتجات شيبسي"),
+              const SizedBox(
+                height: 16,
+              ),
+              const CustomField(hintText: "ابحث عن مشروبك المفضل"),
             ],
-          )
-      ),
+          )),
     );
   }
 }
