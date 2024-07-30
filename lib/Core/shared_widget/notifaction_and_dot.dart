@@ -5,9 +5,9 @@ import '../utils/images.dart';
 
 // ignore: must_be_immutable
 class NotificationAndDot extends StatelessWidget {
-   NotificationAndDot({super.key, required this.colorDot, required this.imageNotification, this.onTap});
+   NotificationAndDot({super.key, required this.colorDot, required this.widget, this.onTap});
    final Color colorDot;
-   final Widget imageNotification;
+   final Widget widget;
   Function()? onTap;
   @override
   Widget build(BuildContext context) {

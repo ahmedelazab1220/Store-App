@@ -134,5 +134,25 @@ abstract class Styles {
     fontSize: 11,
     color: const Color(0xff6A6565).withOpacity(0.8),
   );
+  static final textStyle40 =  GoogleFonts.almarai(
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+    color: const Color(0xffBCB7B7).withOpacity(0.8),
+  );
+  static final textStyle41 =  GoogleFonts.almarai(
+    fontWeight: FontWeight.w700,
+    fontSize: 10,
+    color: const Color(0xff8E8E8E),
+  );
+  static final textStyle42 =  GoogleFonts.almarai(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    color: const Color(0xff6A6565).withOpacity(0.8),
+  );
+  static final textStyle43 =  GoogleFonts.almarai(
+    fontWeight: FontWeight.w800,
+    fontSize: 15,
+    color: const Color(0xff5941AF),
+  );
 
 }

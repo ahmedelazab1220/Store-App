@@ -31,7 +31,7 @@ class CustomAppbarHomeScreen extends StatelessWidget {
                       onTap: (){},
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width*0.07,),
-                    NotificationAndDot(colorDot:   AppColors.lILACSPRINGColor, imageNotification:SvgPicture.asset(AppImages.kNoticesIcon) ,onTap: (){
+                    NotificationAndDot(colorDot:   AppColors.lILACSPRINGColor, widget:SvgPicture.asset(AppImages.kNoticesIcon) ,onTap: (){
                       GoRouter.of(context)
                           .push(AppRouter.kNotification);
                       // Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));

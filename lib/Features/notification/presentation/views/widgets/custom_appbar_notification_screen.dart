@@ -37,7 +37,7 @@ class CustomAppbarNotificationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Spacer(),
-            NotificationAndDot(colorDot: AppColors.white, imageNotification: SvgPicture.asset(AppImages.kNotificationIconWhite,),),
+            NotificationAndDot(colorDot: AppColors.white, widget: SvgPicture.asset(AppImages.kNotificationIconWhite,),),
             const SizedBox(width: 8,),
             Text(AppText.notification,
               style: Styles.textStyle36,
