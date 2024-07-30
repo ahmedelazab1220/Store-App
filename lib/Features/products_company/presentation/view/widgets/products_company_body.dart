@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../Core/utils/colors.dart';
 
-import '../../../../../Core/utils/styles.dart';
 import 'custom_app_bar_products_company_screen.dart';
 import 'custom_divider.dart';
 import 'list_items_of_product_vertical.dart';
@@ -12,7 +10,7 @@ class ProductsCompanyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
      slivers: [
        SliverToBoxAdapter(child: CustomAppBarProductsCompanyScreen()),
        SliverToBoxAdapter(child: ListProductHorizontal()),

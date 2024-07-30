@@ -10,17 +10,17 @@ class BodyItemBuilderItemsOfProductList extends StatelessWidget {
     return Stack(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 23,vertical: 5),
-            padding: EdgeInsets.only(top: 16,bottom: 23),
+            margin: const EdgeInsets.symmetric(horizontal: 23,vertical: 5),
+            padding: const EdgeInsets.only(top: 16,bottom: 23),
             width: double.infinity,
             decoration:BoxDecoration(
-                color: Color(0xffF3F5FC),
+                color: const Color(0xffF3F5FC),
                 borderRadius: BorderRadius.circular(20)
             ),
             child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 78),
+                const Padding(
+                  padding: EdgeInsets.only(left: 78),
                   child: Image(image: AssetImage("assets/images/chipsy_item.png"),
                     width: 45,
                     height: 56,
@@ -46,7 +46,7 @@ class BodyItemBuilderItemsOfProductList extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: Styles.textStyle42,
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         Row(
                           textDirection: TextDirection.rtl,
                           children: [

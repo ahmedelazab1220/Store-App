@@ -36,7 +36,7 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Spacer(),
-                  Stack(
+                  const Stack(
                     alignment: Alignment.center,
                     children: [
                       CircleAvatar(
@@ -70,25 +70,25 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30,),
+              const SizedBox(height: 30,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: TextField(
                   textDirection: TextDirection.rtl,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppColors.white,
                   ),
                   decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.search),
+                      suffixIcon: const Icon(Icons.search),
                       suffixIconColor: Colors.white,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppColors.white, width: 0.8,
+                        borderSide: const BorderSide(color: AppColors.white, width: 0.8,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: AppColors.white, width: 0.8,
+                        borderSide: const BorderSide(color: AppColors.white, width: 0.8,
                         ),
                       ),
                       hintText: "ابحث عن منتجات شيبسي",

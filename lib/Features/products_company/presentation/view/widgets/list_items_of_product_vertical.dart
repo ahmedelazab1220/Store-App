@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/utils/colors.dart';
-import '../../../../../Core/utils/styles.dart';
 import 'body_itembuilder_items_of_product_list.dart';
 
 
@@ -13,7 +11,7 @@ class ListItemsOfProductVertical extends StatelessWidget {
     return  SliverList(
       delegate: SliverChildBuilderDelegate(
             (context, index) {
-          return  BodyItemBuilderItemsOfProductList();
+          return  const BodyItemBuilderItemsOfProductList();
         },
         childCount: 20, // Adjusted for 10 items and 9 separators
       ),

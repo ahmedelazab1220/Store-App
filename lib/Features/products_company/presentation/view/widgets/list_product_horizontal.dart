@@ -16,20 +16,20 @@ class ListProductHorizontal extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 25,
-                  backgroundColor: Color(0xff2151A1).withOpacity(0.05),
-                  child: Image(image: AssetImage("assets/images/chipsy_item.png"),
+                  backgroundColor: const Color(0xff2151A1).withOpacity(0.05),
+                  child: const Image(image: AssetImage("assets/images/chipsy_item.png"),
                     width: 23,
                     height: 33,
                   ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Text("شطة وليمون",
                   style: Styles.textStyle41,
                 )
               ],
             );
           },
-          separatorBuilder: (context, index) => SizedBox(width: 16,),
+          separatorBuilder: (context, index) => const SizedBox(width: 16,),
           itemCount:10,
       ),
     );
