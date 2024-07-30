@@ -4,6 +4,7 @@ import 'package:storeapp/Features/notification/presentation/views/notification_s
 import 'package:storeapp/Features/onBoarding/presentation/view/on_boarding_screen.dart';
 import 'package:storeapp/Features/splash/presentation/view/splash_screen.dart';
 
+import '../../Features/product_details/presentation/views/view.dart';
 import '../../Features/products_company/presentation/view/view.dart';
 import '../../Features/products_sections/presentation/views/view.dart';
 
@@ -14,6 +15,7 @@ abstract class AppRouter {
   static const String kNotification = '/Notification';
   static const String kProductsCompanyScreen = '/ProductsCompanyScreen';
   static const String kProductsSectionScreen = '/ProductsSectionScreen';
+  static const String kProductDetailsScreen = '/ProductDetailsScreen';
 
   static final router = GoRouter(
     routes: [
@@ -40,6 +42,10 @@ abstract class AppRouter {
       GoRoute(
         path: kProductsSectionScreen,
         builder: (context, state) => const ProductsSectionScreen(),
+      ),
+      GoRoute(
+        path: kProductDetailsScreen,
+        builder: (context, state) => const ProductDetailsScreen(),
       ),
     ],
   );
