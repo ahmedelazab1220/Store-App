@@ -9,6 +9,7 @@ class ListItemsInBasket extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
+        padding: EdgeInsets.all(0),
           itemBuilder: (context, index) {
             return const BodyItemBuilderListInBasket();
           },

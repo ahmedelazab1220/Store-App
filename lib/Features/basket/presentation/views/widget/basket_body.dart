@@ -14,17 +14,17 @@ class BasketBody extends StatelessWidget {
       children: [
         const CustomAppbar(text: 'السله', image: "assets/images/teenyicons_cart-outline.png",),
         const ListItemsInBasket(),
-        const SizedBox(height: 20),
+         const SizedBox(height: 10),
         GestureDetector(
           onTap: (){},
           child: Container(
             width: double.infinity,
-            margin: const EdgeInsets.only(left: 23, right: 23, bottom: 16),
+            margin: const EdgeInsets.only(left: 23, right: 23, bottom: 7),
             padding: const EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xffDFE1E8).withOpacity(0.5),
-               ),
+              borderRadius: BorderRadius.circular(10),
+              color: const Color(0xffDFE1E8).withOpacity(0.5),
+            ),
             child: Center(
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class BasketBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomButton(text: 'اضف الي السلة', onTap: (){},),
+        CustomButton(text: 'اضف الي السلة', onTap: (){},)
       ],
     );
   }
