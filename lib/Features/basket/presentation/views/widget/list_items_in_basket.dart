@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+import 'body_item_builder_list_in_basket.dart';
+
+class ListItemsInBasket extends StatelessWidget {
+  const ListItemsInBasket({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+          itemBuilder: (context, index) {
+            return BodyItemBuilderListInBasket();
+          },
+          separatorBuilder: (context, index) => SizedBox(height: 10,),
+          itemCount: 10
+      ),
+    );
+  }
+}
+
