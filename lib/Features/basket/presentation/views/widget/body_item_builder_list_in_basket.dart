@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class BodyItemBuilderListInBasket extends StatelessWidget {
@@ -7,7 +7,9 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  Stack(
+      children: [
+       Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 23),
       padding: const EdgeInsets.only(left: 16,right: 16,bottom: 16, top: 21),
@@ -143,6 +145,74 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
           ),
         ],
       ),
+    ),
+        Positioned(
+          left: 24,
+          top: 1,
+          child: GestureDetector(
+            onTap: (){
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    content: Text("هل انت متأكد من حذف هذا المنتج؟",
+                      textAlign: TextAlign.right,
+                      textDirection: TextDirection.rtl,
+                      style: Styles.textStyle33,
+                    ),
+                    actionsAlignment:MainAxisAlignment.center ,
+                    actions: [
+                      GestureDetector(
+                        child: Container(
+                          margin: EdgeInsets.only(right: 25),
+                          padding: EdgeInsets.symmetric(horizontal: 40,vertical: 8),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xff1A48BF),
+                                    Color(0xff5C22A1),
+                                  ]
+                              )
+                          ),
+                          child:  Text("لا",
+                            style: Styles.textStyle51,
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){},
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 33,vertical: 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Color(0xffBC2C2C),
+                          ),
+                          child:  Text("نعم",
+                            style: Styles.textStyle51,
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },);
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 6),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(0),
+                      bottomLeft: Radius.circular(2),
+                      bottomRight: Radius.circular(30)),
+                  color: Color(0xffD21E1E),
+
+              ),
+              child: Text('حذف', style: Styles.textStyle32),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

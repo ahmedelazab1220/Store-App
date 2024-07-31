@@ -14,7 +14,7 @@ class ListItemsInBasket extends StatelessWidget {
             return const BodyItemBuilderListInBasket();
           },
           separatorBuilder: (context, index) => const SizedBox(height: 10,),
-          itemCount: 10
+          itemCount: 10,
       ),
     );
   }
