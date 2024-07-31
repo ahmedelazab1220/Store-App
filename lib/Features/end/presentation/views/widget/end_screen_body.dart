@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:storeapp/Core/shared_widget/custom_button.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 
@@ -39,15 +38,15 @@ class _EndScreenBodyState extends State<EndScreenBody> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(image: AssetImage("assets/images/done_image.png"),
+            const Image(image: AssetImage("assets/images/done_image.png"),
               width: 80,
               height: 80,
             ),
-            SizedBox(height: 13,),
+            const SizedBox(height: 13,),
             Text("تم تأكيد الطلب بنجاح",
               style: Styles.textStyle52,
             ),
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
             CustomButton(text: "العودة الي الرئيسية", onTap: (){})
           ],
         ),
@@ -55,7 +54,7 @@ class _EndScreenBodyState extends State<EndScreenBody> {
           Positioned(
             top: 100,
             child: ZoomIn(
-              child: Image(image: AssetImage("assets/images/celebrate1.png"),
+              child: const Image(image: AssetImage("assets/images/celebrate1.png"),
                   width: 200,
                   height: 200
                 ,
@@ -66,7 +65,7 @@ class _EndScreenBodyState extends State<EndScreenBody> {
             left: 31,
             top: 270,
             child: ZoomIn(
-              child: Image(image: AssetImage("assets/images/celebrate2.png"),
+              child: const Image(image: AssetImage("assets/images/celebrate2.png"),
               width: 50,
                 height: 50,
               ),
@@ -76,7 +75,7 @@ class _EndScreenBodyState extends State<EndScreenBody> {
             right: 31,
             top: 270,
             child: ZoomIn(
-              child: Image(image: AssetImage("assets/images/celebrate3.png"),
+              child: const Image(image: AssetImage("assets/images/celebrate3.png"),
               width: 50,
                 height: 50,
               ),
@@ -90,7 +89,7 @@ class _EndScreenBodyState extends State<EndScreenBody> {
               confettiController: _confettiController,
               blastDirectionality: BlastDirectionality.explosive,
               shouldLoop: false,
-              colors: [Colors.red, Colors.blue, Colors.green, Colors.yellow],
+              colors: const [Colors.red, Colors.blue, Colors.green, Colors.yellow],
             ),
           ),
         ],

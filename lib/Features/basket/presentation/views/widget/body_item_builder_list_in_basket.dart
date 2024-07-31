@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
 class BodyItemBuilderListInBasket extends StatelessWidget {
@@ -164,11 +163,11 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
                     actions: [
                       GestureDetector(
                         child: Container(
-                          margin: EdgeInsets.only(right: 25),
-                          padding: EdgeInsets.symmetric(horizontal: 40,vertical: 8),
+                          margin: const EdgeInsets.only(right: 25),
+                          padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 8),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                   colors: [
                                     Color(0xff1A48BF),
                                     Color(0xff5C22A1),
@@ -183,10 +182,10 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
                       GestureDetector(
                         onTap: (){},
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 33,vertical: 8),
+                          padding: const EdgeInsets.symmetric(horizontal: 33,vertical: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: Color(0xffBC2C2C),
+                            color: const Color(0xffBC2C2C),
                           ),
                           child:  Text("نعم",
                             style: Styles.textStyle51,
