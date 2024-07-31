@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../Core/shared_widget/custom_appbar.dart';
 import '../../../../../Core/shared_widget/custom_button.dart';
+import '../../../../../Core/utils/routers.dart';
 import '../../../../../Core/utils/styles.dart';
 import 'list_items_in_basket.dart';
 
@@ -46,7 +48,10 @@ class BasketBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomButton(text: 'تأكيد',onTap: (){},
+        CustomButton(text: 'تأكيد',onTap: (){
+          GoRouter.of(context)
+              .push(AppRouter.kEndScreen);
+        },
         )
       ],
     );
