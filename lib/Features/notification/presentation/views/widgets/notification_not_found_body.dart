@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../../../Core/shared_widget/custom_appbar.dart';
+import '../../../../../Core/utils/colors.dart';
+import '../../../../../Core/utils/images.dart';
 import '../../../../../Core/utils/styles.dart';
-import 'custom_appbar_notification_screen.dart';
+
 
 class NotificationNotFoundBody extends StatelessWidget {
   const NotificationNotFoundBody({super.key});
@@ -9,7 +12,7 @@ class NotificationNotFoundBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomAppbarNotificationScreen(),
+        const CustomAppbar(text: 'الأشعارات',colorDotNotification: AppColors.white,image: AppImages.kNotificationIconWhite,),
         SizedBox(height: MediaQuery.of(context).size.height*0.15,),
         const Image(image: AssetImage("assets/images/notification_not_found_body2.png"),
         width: 228,

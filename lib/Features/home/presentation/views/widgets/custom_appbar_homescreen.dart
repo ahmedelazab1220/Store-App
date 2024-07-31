@@ -28,7 +28,10 @@ class CustomAppbarHomeScreen extends StatelessWidget {
                     //Navigate to product in  car
                     GestureDetector(
                       child: SvgPicture.asset(AppImages.kCarShopping),
-                      onTap: (){},
+                      onTap: (){
+                        GoRouter.of(context)
+                            .push(AppRouter.kBasketScreen);
+                      },
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width*0.07,),
                     NotificationAndDot(colorDot:   AppColors.lILACSPRINGColor, widget:SvgPicture.asset(AppImages.kNoticesIcon) ,onTap: (){

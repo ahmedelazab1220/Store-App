@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_appbar_product_details.dart';
+import '../../../../../Core/shared_widget/custom_appbar.dart';
 import 'custom_button.dart';
 import 'custom_panner.dart';
 import 'detials_container.dart';
@@ -11,7 +11,7 @@ class ProductDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomAppbarProductDetails()),
+        SliverToBoxAdapter(child: CustomAppbar(text: "تفاصيل المنتج",)),
         SliverToBoxAdapter(child: CustomBanner()),
         SliverToBoxAdapter(child: SizedBox(height: 24,)),
         SliverToBoxAdapter(
