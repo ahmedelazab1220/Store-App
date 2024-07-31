@@ -9,11 +9,11 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 23),
-      padding: EdgeInsets.only(left: 16,right: 16,bottom: 16, top: 21),
+      margin: const EdgeInsets.symmetric(horizontal: 23),
+      padding: const EdgeInsets.only(left: 16,right: 16,bottom: 16, top: 21),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Color(0xffF3F5FC),
+        color: const Color(0xffF3F5FC),
       ),
       child: Row(
         children: [
@@ -21,7 +21,7 @@ class BodyItemBuilderListInBasket extends StatelessWidget {
             width: MediaQuery.of(context).size.width/2-64,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                     width: 90,
                     height: 90,
                     child: Image(image: AssetImage("assets/images/pasket_pepsi.png"),)),

@@ -12,9 +12,9 @@ class BasketBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomAppbar(text: 'السله', image: "assets/images/teenyicons_cart-outline.png",),
-        ListItemsInBasket(),
-        SizedBox(height: 20),
+        const CustomAppbar(text: 'السله', image: "assets/images/teenyicons_cart-outline.png",),
+        const ListItemsInBasket(),
+        const SizedBox(height: 20),
         GestureDetector(
           onTap: (){},
           child: Container(
@@ -23,7 +23,7 @@ class BasketBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xffDFE1E8).withOpacity(0.5),
+                color: const Color(0xffDFE1E8).withOpacity(0.5),
                ),
             child: Center(
               child:  Row(
@@ -35,7 +35,7 @@ class BasketBody extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     style: Styles.textStyle35,
                   ),
-                  SizedBox(width: 10,),
+                  const SizedBox(width: 10,),
                   Text(
                     " 200 ج",
                     textDirection: TextDirection.rtl,

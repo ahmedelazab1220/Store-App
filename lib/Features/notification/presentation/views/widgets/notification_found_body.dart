@@ -11,7 +11,7 @@ class NotificationFoundBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool notificationFound = false;
-    return  CustomScrollView(
+    return  const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(child: CustomAppbar(text: 'الأشعارات',colorDotNotification: AppColors.white,image: AppImages.kNotificationIconWhite,)),
         ListNotificationScreen(),

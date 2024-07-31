@@ -10,9 +10,9 @@ class ListItemsInBasket extends StatelessWidget {
     return Expanded(
       child: ListView.separated(
           itemBuilder: (context, index) {
-            return BodyItemBuilderListInBasket();
+            return const BodyItemBuilderListInBasket();
           },
-          separatorBuilder: (context, index) => SizedBox(height: 10,),
+          separatorBuilder: (context, index) => const SizedBox(height: 10,),
           itemCount: 10
       ),
     );

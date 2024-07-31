@@ -11,13 +11,13 @@ class ProductDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomAppbar(text: "تفاصيل المنتج",)),
-        SliverToBoxAdapter(child: CustomBanner()),
-        SliverToBoxAdapter(child: SizedBox(height: 24,)),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(child: CustomAppbar(text: "تفاصيل المنتج",)),
+        const SliverToBoxAdapter(child: CustomBanner()),
+        const SliverToBoxAdapter(child: SizedBox(height: 24,)),
+        const SliverToBoxAdapter(
           child: DetialsContainer()
         ),
-        SliverToBoxAdapter(child: SizedBox(height: 40,)),
+        const SliverToBoxAdapter(child: SizedBox(height: 40,)),
         SliverToBoxAdapter(
           child: CustomButton(text: 'اضف الي السلة', onTap: (){},),
         ),

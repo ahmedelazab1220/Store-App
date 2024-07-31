@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
-import '../utils/images.dart';
 import 'notifaction_and_dot.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -39,19 +38,19 @@ class CustomAppbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            const Spacer(),
             if (image != null&& colorDotNotification==null)Image(image: AssetImage(image!),
             width: 24,
               height: 24,
             ),
             if (colorDotNotification !=null &&image!=null) NotificationAndDot(colorDot:colorDotNotification! ,widget: SvgPicture.asset(image!,),),
-            SizedBox(width: 15,),
+            const SizedBox(width: 15,),
             Text(
               text,
               textAlign: TextAlign.center,
               style: Styles.textStyle36,
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
               onPressed: () {
                 Navigator.pop(context);
