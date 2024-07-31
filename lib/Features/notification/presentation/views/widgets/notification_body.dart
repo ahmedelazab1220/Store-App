@@ -7,7 +7,7 @@ class NotificationBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool notificationFound = false;
+    bool notificationFound = true;
     return  notificationFound==false? const NotificationNotFoundBody():const NotificationFoundBody();
   }
 }

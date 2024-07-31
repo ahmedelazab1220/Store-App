@@ -189,4 +189,9 @@ abstract class Styles {
     fontSize: 16,
     color: const Color(0xff5941AF)
   );
+  static final textStyle51 = GoogleFonts.almarai(
+      fontSize: 15,
+      fontWeight: FontWeight.w700, // 700
+      color:  Colors.white,
+  );
 }

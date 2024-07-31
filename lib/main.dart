@@ -10,6 +10,7 @@ void main() {
   Bloc.observer = SimpleBlocObserver();
   setup();
   runApp(
+      //StoreApp(),
     DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => const StoreApp(), // Wrap your app
