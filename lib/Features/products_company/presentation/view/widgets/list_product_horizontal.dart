@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../../Core/utils/styles.dart';
 import 'body_itembuilder_prducts_hotizontal.dart';
 
 class ListProductHorizontal extends StatelessWidget {

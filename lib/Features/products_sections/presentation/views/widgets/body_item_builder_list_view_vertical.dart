@@ -28,7 +28,7 @@ class BodyItemBuilderListViewVertical extends StatelessWidget {
                 children: [
                    SizedBox(
                     width: MediaQuery.of(context).size.width*0.27,
-                    child:  Padding(
+                    child:  const Padding(
                       padding: EdgeInsets.only(left: 20,top: 40),
                       child: Image(
                         image: AssetImage("assets/images/picket_pepsi.png"),
@@ -44,8 +44,8 @@ class BodyItemBuilderListViewVertical extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          NameOfProduct(text: "بيبسى"),
-                          SizedBox(height: 10,),
+                          const NameOfProduct(text: "بيبسى"),
+                          const SizedBox(height: 10,),
                           Text(
                             "باكيت كانز بيبسي حجم 250 ملي",
                             textDirection: TextDirection.rtl,

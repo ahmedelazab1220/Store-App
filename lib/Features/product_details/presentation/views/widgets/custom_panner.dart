@@ -10,18 +10,18 @@ class CustomBanner extends StatelessWidget {
     return Stack(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 23),
-            padding: EdgeInsets.symmetric(horizontal: 84, vertical: 25),
+            margin: const EdgeInsets.symmetric(horizontal: 23),
+            padding: const EdgeInsets.symmetric(horizontal: 84, vertical: 25),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xffF3F5FC)
+                color: const Color(0xffF3F5FC)
             ),
-            child: Image(image: AssetImage("assets/images/pipsi_product_details.png"),
+            child: const Image(image: AssetImage("assets/images/pipsi_product_details.png"),
               height: 100,
               width: 162,
             ),
           ),
-          Positioned(
+          const Positioned(
             left: 40,
             top: 10,
             child: CircleAvatar(

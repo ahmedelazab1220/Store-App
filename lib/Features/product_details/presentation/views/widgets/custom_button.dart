@@ -9,11 +9,11 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.only(left: 23,right: 23,bottom: 16 ),
-      padding: EdgeInsets.symmetric(vertical: 16),
+      margin: const EdgeInsets.only(left: 23,right: 23,bottom: 16 ),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [
               Color(0xff0A41CD),
               Color(0xff2F33CD),

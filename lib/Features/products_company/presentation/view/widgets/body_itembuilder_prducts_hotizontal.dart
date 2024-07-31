@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../Core/utils/styles.dart';
 
@@ -13,7 +12,7 @@ class BodyItemBuilderProductsHorizontal extends StatelessWidget {
         CircleAvatar(
           radius: 25,
           backgroundColor: const Color(0xff2151A1).withOpacity(0.05),
-          child:  Image(image: AssetImage("assets/images/chipsy_item.png"),
+          child:  Image(image: const AssetImage("assets/images/chipsy_item.png"),
             width: MediaQuery.of(context).size.width*0.1,
             height: MediaQuery.of(context).size.width*0.105,
           ),

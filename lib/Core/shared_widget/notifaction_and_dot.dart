@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotificationAndDot extends StatelessWidget {
-  NotificationAndDot({
+  const NotificationAndDot({
     super.key,
     required this.colorDot,
     required this.widget,

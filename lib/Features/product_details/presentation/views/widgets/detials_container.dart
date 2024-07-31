@@ -8,32 +8,32 @@ class DetialsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(horizontal: 23),
-        padding: EdgeInsets.symmetric(horizontal:24,vertical:20 ),
+        margin: const EdgeInsets.symmetric(horizontal: 23),
+        padding: const EdgeInsets.symmetric(horizontal:24,vertical:20 ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color(0xffF3F5FC)
+            color: const Color(0xffF3F5FC)
         ),
         child: Column(
           children: [
-            CustomText(
+            const CustomText(
                 text1: "القسم",
                 text2: "المشروبات",
                 text3: "الشركة",
                 text4: "بيبسي"
             ),
-            SizedBox(height: 20,),
-            CustomText(
+            const SizedBox(height: 20,),
+            const CustomText(
                 text1: "النوع",
                 text2: "كانز",
                 text3: "الحجم",
                 text4: "250 ml"
             ),
-            SizedBox(height: 16,),
-            Divider(
+            const SizedBox(height: 16,),
+            const Divider(
               color: Color(0xff323AB4),
             ),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
             Align(
               alignment: Alignment.centerRight,
               child: Text("حدد الكمية",
@@ -41,7 +41,7 @@ class DetialsContainer extends StatelessWidget {
                 style: Styles.textStyle46,
               ),
             ),
-            SizedBox(height: 24,),
+            const SizedBox(height: 24,),
             Container(
               height: 40,
               width: 170,
@@ -63,7 +63,7 @@ class DetialsContainer extends StatelessWidget {
                         child: Container(
                           width: 40,
                           height: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: LinearGradient(
                                 colors: [
@@ -74,7 +74,7 @@ class DetialsContainer extends StatelessWidget {
                                 end: Alignment.bottomCenter,
                               )
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.remove,
                             color: Colors.white,
                           ),
@@ -98,7 +98,7 @@ class DetialsContainer extends StatelessWidget {
                         child: Container(
                           width: 40,
                           height: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: LinearGradient(
                                 colors: [
@@ -109,7 +109,7 @@ class DetialsContainer extends StatelessWidget {
                                 end: Alignment.bottomCenter,
                               )
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.add,
                             color: Colors.white,
                           ),
@@ -119,7 +119,7 @@ class DetialsContainer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             Row(
               textDirection: TextDirection.rtl,
               children: [
@@ -128,7 +128,7 @@ class DetialsContainer extends StatelessWidget {
                   textAlign: TextAlign.right,
                   style: Styles.textStyle48,
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Text("150 ج",
                   textDirection: TextDirection.rtl,
                   style: Styles.textStyle49,
@@ -136,7 +136,7 @@ class DetialsContainer extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
             Row(
               textDirection: TextDirection.rtl,
               children: [
@@ -145,7 +145,7 @@ class DetialsContainer extends StatelessWidget {
                   textAlign: TextAlign.right,
                   style: Styles.textStyle48,
                 ),
-                SizedBox(width: 40,),
+                const SizedBox(width: 40,),
                 Text("450 ج",
                   textDirection: TextDirection.rtl,
                   style: Styles.textStyle50,
@@ -176,7 +176,7 @@ class CustomText extends StatelessWidget {
           textDirection: TextDirection.rtl,
           style: Styles.textStyle38,
         ),
-        SizedBox(width: 12,),
+        const SizedBox(width: 12,),
         Expanded(
           child: Text("$text2 ",
 
@@ -188,7 +188,7 @@ class CustomText extends StatelessWidget {
           textDirection: TextDirection.rtl,
           style: Styles.textStyle38,
         ),
-        SizedBox(width: 12,),
+        const SizedBox(width: 12,),
         Text("$text4 ",
           textDirection: TextDirection.rtl,
           style: Styles.textStyle44,
