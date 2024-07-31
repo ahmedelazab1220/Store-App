@@ -46,7 +46,7 @@ class BasketBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomButton(text: 'اضف الي السلة',onTap: (){},
+        CustomButton(text: 'تأكيد',onTap: (){},
         )
       ],
     );
