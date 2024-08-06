@@ -60,7 +60,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(0.5, 0),
-            end: Alignment(-0.48, 0.81),
+            end: Alignment(-0.58, 0.71),
             colors: [
               AppColors.deepPurpleA700,
               AppColors.purple600,

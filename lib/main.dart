@@ -14,6 +14,7 @@ void main() {
       enabled: !kReleaseMode,
       builder: (context) => const StoreApp(), // Wrap your app
     ),
+    //const StoreApp(),
   );
 }
 
