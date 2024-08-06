@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storeapp/Core/shared_widget/custom_field.dart';
+import 'package:storeapp/Core/widgets/custom_field.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
@@ -8,10 +8,10 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.only(bottom: 22),
       child: Container(
-          padding:  const EdgeInsets.only(top:45,bottom: 16),
+          padding: const EdgeInsets.only(top: 45, bottom: 16),
           width: double.infinity,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -42,7 +42,9 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                         radius: 25,
                         backgroundColor: AppColors.white,
                       ),
-                      Image(image: AssetImage("assets/images/chiosy_product_scr_appbar.png"),
+                      Image(
+                        image: AssetImage(
+                            "assets/images/chiosy_product_scr_appbar.png"),
                         height: 50,
                         width: 50,
                       ),
@@ -69,11 +71,12 @@ class CustomAppBarProductsCompanyScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 30,),
-              const CustomField(hintText:  "ابحث عن منتجات شيبسي"),
+              const SizedBox(
+                height: 30,
+              ),
+              const CustomField(hintText: "ابحث عن منتجات شيبسي"),
             ],
-          )
-      ),
+          )),
     );
   }
 }

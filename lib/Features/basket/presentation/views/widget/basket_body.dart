@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../Core/shared_widget/custom_appbar.dart';
-import '../../../../../Core/shared_widget/custom_button.dart';
+import '../../../../../Core/widgets/custom_appbar.dart';
+import '../../../../../Core/widgets/custom_button.dart';
 import '../../../../../Core/utils/routers.dart';
 import '../../../../../Core/utils/styles.dart';
 import 'list_items_in_basket.dart';
@@ -14,11 +14,14 @@ class BasketBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomAppbar(text: 'السله', image: "assets/images/teenyicons_cart-outline.png",),
+        const CustomAppbar(
+          text: 'السله',
+          image: "assets/images/teenyicons_cart-outline.png",
+        ),
         const ListItemsInBasket(),
-         const SizedBox(height: 10),
+        const SizedBox(height: 10),
         GestureDetector(
-          onTap: (){},
+          onTap: () {},
           child: Container(
             width: double.infinity,
             margin: const EdgeInsets.only(left: 23, right: 23, bottom: 7),
@@ -28,7 +31,7 @@ class BasketBody extends StatelessWidget {
               color: const Color(0xffDFE1E8).withOpacity(0.5),
             ),
             child: Center(
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 textDirection: TextDirection.rtl,
                 children: [
@@ -37,7 +40,9 @@ class BasketBody extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     style: Styles.textStyle35,
                   ),
-                  const SizedBox(width: 10,),
+                  const SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     " 200 ج",
                     textDirection: TextDirection.rtl,
@@ -48,14 +53,13 @@ class BasketBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomButton(text: 'تأكيد',onTap: (){
-          GoRouter.of(context)
-              .push(AppRouter.kEndScreen);
-        },
+        CustomButton(
+          text: 'تأكيد',
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kEndScreen);
+          },
         )
       ],
     );
   }
 }
-
-

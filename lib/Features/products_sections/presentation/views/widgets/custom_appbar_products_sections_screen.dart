@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/shared_widget/custom_field.dart';
+import '../../../../../Core/widgets/custom_field.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/styles.dart';
 
-class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
-  const  CustomAppbarProductsSectionsScreen({super.key});
+class CustomAppbarProductsSectionsScreen extends StatelessWidget {
+  const CustomAppbarProductsSectionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 22),
       child: Container(
-          padding: const EdgeInsets.only(top: 30,bottom: 22),
+          padding: const EdgeInsets.only(top: 30, bottom: 22),
           width: double.infinity,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -53,7 +53,6 @@ class  CustomAppbarProductsSectionsScreen extends StatelessWidget {
                         Icons.arrow_forward_ios,
                         color: AppColors.white,
                       )),
-                
                 ],
               ),
               const SizedBox(

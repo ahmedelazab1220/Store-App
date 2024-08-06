@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../Core/shared_widget/custom_appbar.dart';
+import '../../../../../Core/widgets/custom_appbar.dart';
 import '../../../../../Core/utils/colors.dart';
 import '../../../../../Core/utils/images.dart';
 
@@ -11,9 +11,14 @@ class NotificationFoundBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool notificationFound = false;
-    return  const CustomScrollView(
+    return const CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomAppbar(text: 'الأشعارات',colorDotNotification: AppColors.white,image: AppImages.kNotificationIconWhite,)),
+        SliverToBoxAdapter(
+            child: CustomAppbar(
+          text: 'الأشعارات',
+          colorDotNotification: AppColors.white,
+          image: AppImages.kNotificationIconWhite,
+        )),
         ListNotificationScreen(),
       ],
     );
