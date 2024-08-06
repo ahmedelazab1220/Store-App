@@ -9,7 +9,6 @@ abstract class AppRouter {
   static const String kOnBoardingScreen = '/OnBoardingScreen';
   static const String kLoginScreen = '/LoginScreen';
   static const String kRegisterScreen = '/RegisterScreen';
-  static const String kHomeScreen = '/HomeScreen';
 
   static final router = GoRouter(
     routes: [

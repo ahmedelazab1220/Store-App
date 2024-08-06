@@ -25,7 +25,6 @@ class StoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
     );
