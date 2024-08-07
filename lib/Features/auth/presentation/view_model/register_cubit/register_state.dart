@@ -13,8 +13,6 @@ final class RegisterLoading extends RegisterState {}
 
 class RegisterSuccessState extends RegisterState {}
 
-class ChangeRegisterPasswordSuffixIcon extends RegisterState {}
-
 class RegisterFailureState extends RegisterState {
   final String message;
   const RegisterFailureState({

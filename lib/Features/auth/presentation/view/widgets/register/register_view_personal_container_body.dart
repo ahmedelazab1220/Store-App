@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Core/utils/images.dart';
-import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/validator.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
-import 'package:storeapp/Features/auth/presentation/view_model/register_cubit/register_cubit.dart';
 
-class RegisterViewPersonalContainerBody extends StatelessWidget {
+class RegisterViewPersonalContainerBody extends StatefulWidget {
   const RegisterViewPersonalContainerBody({
     super.key,
     required this.emailController,
@@ -24,8 +21,17 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
   final TextEditingController phoneController;
 
   @override
+  State<RegisterViewPersonalContainerBody> createState() =>
+      _RegisterViewPersonalContainerBodyState();
+}
+
+class _RegisterViewPersonalContainerBodyState
+    extends State<RegisterViewPersonalContainerBody> {
+  bool secure = true;
+  IconData suffixIcon = Icons.visibility;
+
+  @override
   Widget build(BuildContext context) {
-    final cubit = context.read<RegisterCubit>();
     return Column(
       children: [
         const CustomTitleFormField(
@@ -38,7 +44,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         CustomTextFormField(
           hintText: AppText.kHintTextEmailField,
           keyboardType: TextInputType.emailAddress,
-          controller: emailController,
+          controller: widget.emailController,
           validator: (value) {
             return Validator.validateEmail(value);
           },
@@ -55,15 +61,17 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         ),
         CustomTextFormField(
           hintText: AppText.kHintTextPasswordField,
-          controller: passwordController,
+          controller: widget.passwordController,
           validator: (value) {
             return Validator.validatePassword(value);
           },
-          secure: cubit.secure,
-          suffixIcon: cubit.suffixIcon,
+          secure: secure,
+          suffixIcon: suffixIcon,
           suffixOnPressed: () {
-            cubit.changeRegisterPasswordSuffixIcon();
-            AppLogger.print("secure: ${cubit.secure}");
+            setState(() {
+              secure = !secure;
+              suffixIcon = secure ? Icons.visibility : Icons.visibility_off;
+            });
           },
         ),
         const SizedBox(
@@ -79,7 +87,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         CustomTextFormField(
           hintText: AppText.kHintTextNameField,
           keyboardType: TextInputType.name,
-          controller: nameController,
+          controller: widget.nameController,
           validator: (value) {
             return Validator.validateName(value);
           },
@@ -97,7 +105,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         CustomTextFormField(
           hintText: AppText.kHintTextPhoneField,
           keyboardType: TextInputType.number,
-          controller: phoneController,
+          controller: widget.phoneController,
           validator: (value) {
             return Validator.validatePhone(value);
           },
