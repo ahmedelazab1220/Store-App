@@ -14,5 +14,6 @@ abstract class AppColors {
   ];
   static const Color kTransparent = Color(0xFF6A6565);
   static const Color kHintTextField = Color(0xFF5B5E5F);
-  static const Color kTextField = Color(0xFF717676);
+  static Color kTextField = const Color(0xFF717676).withOpacity(0.5);
+  static const Color kTitleTextField = Color(0xFF717676);
 }

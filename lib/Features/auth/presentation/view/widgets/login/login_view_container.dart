@@ -9,7 +9,7 @@ class LoginViewContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        top: MediaQuery.of(context).size.height * 0.01,
+        top: MediaQuery.of(context).size.height * 0.005,
       ),
       padding: const EdgeInsets.only(
         right: 30.0,

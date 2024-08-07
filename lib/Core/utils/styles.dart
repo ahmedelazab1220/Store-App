@@ -43,7 +43,7 @@ abstract class Styles {
   static final textStyle12 = GoogleFonts.almarai(
     fontSize: 12,
     fontWeight: FontWeight.w400,
-    color: AppColors.grey,
+    color: AppColors.kTitleTextField,
   );
 
   static final textStyle11 = GoogleFonts.almarai(

@@ -17,7 +17,6 @@ class RegisterViewContainer extends StatelessWidget {
         left: 30.0,
       ),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50.0),

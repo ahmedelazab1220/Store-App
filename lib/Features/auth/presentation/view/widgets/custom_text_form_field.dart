@@ -8,16 +8,26 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     required this.hintText,
     this.keyboardType,
+    this.validator,
+    this.secure,
+    this.suffixIcon,
+    this.suffixOnPressed,
   });
 
   final TextEditingController? controller;
   final String hintText;
   final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
+  final bool? secure;
+  final IconData? suffixIcon;
+  final Function()? suffixOnPressed;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validator,
+      obscureText: secure ?? false,
       keyboardType: keyboardType,
       cursorColor: AppColors.grey,
       decoration: InputDecoration(
@@ -28,6 +38,12 @@ class CustomTextFormField extends StatelessWidget {
         hintStyle: Styles.textStyle11.copyWith(
           color: AppColors.kHintTextField,
         ),
+        suffixIcon: suffixIcon != null
+            ? IconButton(
+                onPressed: suffixOnPressed,
+                icon: Icon(suffixIcon),
+              )
+            : null,
       ),
       textAlign: TextAlign.center,
     );
@@ -36,7 +52,7 @@ class CustomTextFormField extends StatelessWidget {
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
-      borderSide: const BorderSide(
+      borderSide: BorderSide(
         color: AppColors.kTextField,
       ),
     );

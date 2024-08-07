@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/member_or_not.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/register/custom_add_image.dart';
+import 'package:storeapp/Features/auth/presentation/view/widgets/register/register_view_address_container_body.dart';
+import 'package:storeapp/Features/auth/presentation/view/widgets/register/register_view_personal_container_body.dart';
 
 class RegisterViewContainerBody extends StatefulWidget {
   const RegisterViewContainerBody({super.key});
@@ -21,81 +20,70 @@ class RegisterViewContainerBody extends StatefulWidget {
 class _RegisterViewContainerBodyState extends State<RegisterViewContainerBody> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController countryController = TextEditingController();
+  final TextEditingController cityController = TextEditingController();
+  final TextEditingController streetController = TextEditingController();
+  final TextEditingController zipCodeController = TextEditingController();
+
+  GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomTitleFormField(
-          image: AppImages.kPersonIcon,
-          title: AppText.kName,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        CustomTextFormField(
-          hintText: AppText.kHintTextNameField,
-          keyboardType: TextInputType.name,
-          controller: nameController,
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        const CustomTitleFormField(
-          image: AppImages.kPhoneIcon,
-          title: AppText.kPhoneNumber,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        CustomTextFormField(
-          hintText: AppText.kHintTextPhoneField,
-          keyboardType: TextInputType.number,
-          controller: phoneController,
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        const CustomTitleFormField(
-          image: AppImages.kAddressIcon,
-          title: AppText.kAddress,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        CustomTextFormField(
-          hintText: AppText.kHintTextAddressField,
-          keyboardType: TextInputType.streetAddress,
-          controller: addressController,
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        const CustomTitleFormField(
-          image: AppImages.kAddressIcon,
-          title: AppText.kCopyIDCard,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        const CustomAddImage(),
-        const SizedBox(
-          height: 55,
-        ),
-        const CustomButton(
-          textButton: AppText.kRegister,
-          width: 174,
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        MemberOrNot(
-          text: AppText.kHaveAccount,
-          textButton: AppText.kDoLogin,
-          onPressed: () {
-            GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
-          },
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Form(
+            key: formKey,
+            child: Column(
+              children: [
+                RegisterViewPersonalContainerBody(
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  nameController: nameController,
+                  phoneController: phoneController,
+                ),
+                const SizedBox(
+                  height: 38,
+                ),
+                RegisterViewAddressContainerBody(
+                  cityController: cityController,
+                  countryController: countryController,
+                  streetController: streetController,
+                  zipCodeController: zipCodeController,
+                ),
+                const SizedBox(
+                  height: 38,
+                ),
+                const CustomAddImage(),
+                const SizedBox(
+                  height: 48,
+                ),
+                CustomButton(
+                  textButton: AppText.kRegister,
+                  width: 174,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      GoRouter.of(context)
+                          .pushReplacement(AppRouter.kSplashScreen);
+                    }
+                  },
+                ),
+                const SizedBox(
+                  height: 51,
+                ),
+                MemberOrNot(
+                  text: AppText.kHaveAccount,
+                  textButton: AppText.kDoLogin,
+                  onPressed: () {
+                    GoRouter.of(context)
+                        .pushReplacement(AppRouter.kLoginScreen);
+                  },
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );

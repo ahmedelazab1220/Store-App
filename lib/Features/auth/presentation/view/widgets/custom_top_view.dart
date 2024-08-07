@@ -16,8 +16,8 @@ class CustomTopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.05,
+        const SizedBox(
+          height: 60,
         ),
         Text(
           text,
@@ -26,7 +26,7 @@ class CustomTopView extends StatelessWidget {
         ),
         SizedBox(
           height: text == AppText.kLogin
-              ? MediaQuery.of(context).size.height * 0.242
+              ? MediaQuery.of(context).size.height * 0.22
               : MediaQuery.of(context).size.height * 0.1,
         ),
         SvgPicture.asset(

@@ -13,7 +13,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: '/',
+        path: kSplashScreen,
         builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(

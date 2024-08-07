@@ -1,10 +1,11 @@
-/*import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:storeapp/Core/errors/failures.dart';
 import 'package:storeapp/Core/utils/api_services.dart';
 import 'package:storeapp/Core/utils/app_apis.dart';
+import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Features/auth/data/models/login_model.dart';
+import 'package:storeapp/Features/auth/data/models/register_model.dart';
 import 'package:storeapp/Features/auth/data/repos/auth_repo.dart';
 
 class AuthRepoImplementation implements AuthRepo {
@@ -22,8 +23,8 @@ class AuthRepoImplementation implements AuthRepo {
           "phone": phoneNumber,
         },
       );
-      final user = LoginModel.fromJson(response);
-      final decodedToken = JwtDecoder.decode(user.accessToken);
+      //final user = LoginModel.fromJson(response);
+      //final decodedToken = JwtDecoder.decode(user.accessToken);
 
       return right(
         LoginModel.fromJson(response),
@@ -34,29 +35,37 @@ class AuthRepoImplementation implements AuthRepo {
   }
 
   @override
-  Future<Either<Failure, LoginModel>> register({
+  Future<Either<Failure, RegisterModel>> register({
     required String phoneNumber,
-    required String username,
-    String? address,
+    required String email,
+    required String password,
+    required String country,
+    required String city,
+    required String street,
   }) async {
     try {
       var response = await apiService.postFormData(
         endpoint: AppApis.loginEndPoint,
         data: {
           "phone": phoneNumber,
-          "username": username,
-          "address": address,
+          "email": email,
+          "password": password,
+          "address.country": country,
+          "address.city": city,
+          "address.street": street,
         },
       );
-      final user = LoginModel.fromJson(response);
-      final decodedToken = JwtDecoder.decode(user.accessToken);
+
+      final user = RegisterModel.fromJson(response);
+      final message = user.message;
+
+      AppLogger.print(message);
 
       return right(
-        LoginModel.fromJson(response),
+        RegisterModel.fromJson(response),
       );
     } on DioException catch (e) {
       return left(ServerFailure.fromDioException(e));
     }
   }
 }
-*/

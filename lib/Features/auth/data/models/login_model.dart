@@ -1,9 +1,13 @@
 class LoginModel {
   final String accessToken;
+  final String refreshToken;
 
-  const LoginModel({required this.accessToken});
+  const LoginModel({required this.accessToken, required this.refreshToken});
 
   factory LoginModel.fromJson(Map<String, dynamic> json) {
-    return LoginModel(accessToken: json["accessToken"]);
+    return LoginModel(
+      accessToken: json["accessToken"],
+      refreshToken: json["refreshToken"],
+    );
   }
 }

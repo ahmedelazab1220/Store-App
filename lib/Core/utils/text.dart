@@ -13,6 +13,9 @@ abstract class AppText {
   static const String kName = 'الأسم:';
   static const String kAddress = 'العنوان:';
   static const String kInvalidPhone = "رقم الهاتف غير صالح";
+  static const String kInvalidName = 'يرجى إدخال اسم صحيح';
+  static const String kInvalidEmail = 'ايميل غير صالح';
+  static const String kInvalidPassword = 'كلمة المرور غير صالحة';
   static const String kHintTextNameField = 'ادخل الأسم ثلاثي';
   static const String kHintTextPhoneField = 'ادخل رقم الهاتف';
   static const String kHintTextAddressField = 'ادخل العنوان بالتفصيل';
@@ -25,4 +28,16 @@ abstract class AppText {
   static const String kLogin = 'تسجيل الدخول';
   static const String kRegister = 'انشاء حساب';
   static const String kTitleRegisterScreen = 'حساب جديد';
+  static const String kEmail = 'البريد الالكتروني:';
+  static const String kPassword = 'كلمة المرور:';
+  static const String kHintTextEmailField = 'ادخل البريد الالكتروني';
+  static const String kHintTextPasswordField = 'ادخل كلمة المرور';
+  static const String kCountry = 'الدوله:';
+  static const String kCity = 'المدينة:';
+  static const String kStreet = 'الشارع:';
+  static const String kZipCode = 'الرمز البريدي: ';
+  static const String kHintTextCountryField = 'ادخل الدوله';
+  static const String kHintTextCityField = 'ادخل المدينة';
+  static const String kHintTextStreetField = 'ادخل الشارع';
+  static const String kHintTextZipCodeField = 'ادخل الرمز البريدي';
 }
