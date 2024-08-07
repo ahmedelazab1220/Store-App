@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:storeapp/Core/errors/failures.dart';
 import 'package:storeapp/Features/auth/data/models/login_model.dart';
 import 'package:dartz/dartz.dart';
@@ -17,6 +15,5 @@ abstract class AuthRepo {
     required String country,
     required String city,
     required String street,
-    required File file,
   });
 }

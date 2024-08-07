@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:storeapp/Core/errors/failures.dart';
@@ -44,19 +42,17 @@ class AuthRepoImplementation implements AuthRepo {
     required String country,
     required String city,
     required String street,
-    required File file,
   }) async {
     try {
       var response = await apiService.postFormData(
         endpoint: AppApis.registerEndPoint,
         data: {
-          "phone": phoneNumber,
+          "phoneNumber": phoneNumber,
           "email": email,
           "password": password,
-          "address.country": country,
+          "address.state": country,
           "address.city": city,
           "address.street": street,
-          "file": file,
         },
       );
 
