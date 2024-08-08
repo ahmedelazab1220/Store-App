@@ -5,9 +5,14 @@ import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
 
-class CustomAddImage extends StatelessWidget {
+class CustomAddImage extends StatefulWidget {
   const CustomAddImage({super.key});
 
+  @override
+  State<CustomAddImage> createState() => _CustomAddImageState();
+}
+
+class _CustomAddImageState extends State<CustomAddImage> {
   @override
   Widget build(BuildContext context) {
     return Column(
