@@ -13,6 +13,8 @@ final class LoginLoadingState extends LoginState {}
 
 class LoginSuccessState extends LoginState {}
 
+class ChangePasswordVisiable extends LoginState {}
+
 class LoginFailureState extends LoginState {
   final String message;
   const LoginFailureState({

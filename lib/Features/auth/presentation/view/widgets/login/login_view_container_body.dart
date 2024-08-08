@@ -25,81 +25,77 @@ class _LoginViewContainerBodyState extends State<LoginViewContainerBody> {
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<LoginCubit>(context);
-    return BlocBuilder<LoginCubit, LoginState>(
-      builder: (context, state) {
-        return Form(
-          key: cubit.formKey,
-          child: Column(
-            children: [
-              const CustomTitleFormField(
-                icon: FontAwesomeIcons.envelope,
-                title: AppText.kEmail,
-              ),
-              const SizedBox(
-                height: 7,
-              ),
-              CustomTextFormField(
-                hintText: AppText.kHintTextEmailField,
-                keyboardType: TextInputType.emailAddress,
-                controller: cubit.emailController,
-                validator: (value) {
-                  return Validator.validateEmail(value);
-                },
-              ),
-              const SizedBox(
-                height: 38,
-              ),
-              const CustomTitleFormField(
-                icon: FontAwesomeIcons.lock,
-                title: AppText.kPassword,
-              ),
-              const SizedBox(
-                height: 7,
-              ),
-              CustomTextFormField(
+    return Form(
+      key: cubit.formKey,
+      child: Column(
+        children: [
+          const CustomTitleFormField(
+            icon: FontAwesomeIcons.envelope,
+            title: AppText.kEmail,
+          ),
+          const SizedBox(
+            height: 7,
+          ),
+          CustomTextFormField(
+            hintText: AppText.kHintTextEmailField,
+            keyboardType: TextInputType.emailAddress,
+            controller: cubit.emailController,
+            validator: (value) {
+              return Validator.validateEmail(value);
+            },
+          ),
+          const SizedBox(
+            height: 38,
+          ),
+          const CustomTitleFormField(
+            icon: FontAwesomeIcons.lock,
+            title: AppText.kPassword,
+          ),
+          const SizedBox(
+            height: 7,
+          ),
+          BlocBuilder<LoginCubit, LoginState>(
+            builder: (context, state) {
+              return CustomTextFormField(
                 hintText: AppText.kHintTextPasswordField,
                 controller: cubit.passwordController,
                 validator: (value) {
                   return Validator.validatePassword(value);
                 },
-                secure: secure,
-                suffixIcon: suffixIcon,
+                secure: cubit.secure,
+                suffixIcon: cubit.suffixIcon,
                 suffixOnPressed: () {
                   setState(() {
-                    secure = !secure;
-                    suffixIcon =
-                        secure ? Icons.visibility : Icons.visibility_off;
+                    cubit.changeSecure();
                   });
                 },
-              ),
-              const SizedBox(
-                height: 48,
-              ),
-              CustomButton(
-                textButton: AppText.kLogin,
-                width: 174,
-                onPressed: () {
-                  if (cubit.formKey.currentState!.validate()) {
-                    GoRouter.of(context)
-                        .pushReplacement(AppRouter.kSplashScreen);
-                  }
-                },
-              ),
-              const SizedBox(
-                height: 51,
-              ),
-              MemberOrNot(
-                text: AppText.kHaveNoAccount,
-                textButton: AppText.kDoRegister,
-                onPressed: () {
-                  GoRouter.of(context)
-                      .pushReplacement(AppRouter.kRegisterScreen);
-                },
-              ),
-            ],
+              );
+            },
           ),
-        );
-      },
+          const SizedBox(
+            height: 48,
+          ),
+          CustomButton(
+            textButton: AppText.kLogin,
+            width: 174,
+            onPressed: () {
+              if (cubit.formKey.currentState!.validate()) {
+                GoRouter.of(context).pushReplacement(AppRouter.kSplashScreen);
+              }
+            },
+          ),
+          const SizedBox(
+            height: 51,
+          ),
+          MemberOrNot(
+            text: AppText.kHaveNoAccount,
+            textButton: AppText.kDoRegister,
+            onPressed: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kRegisterScreen);
+            },
+          ),
+        ],
+      ),
     );
   }
 }
