@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +35,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         country: countryController.text.trim(),
         street: streetController.text.trim(),
         city: cityController.text.trim(),
+        file: File('"C:/Users/Lenovo/Pictures/Saved Pictures/google.png"'),
       );
       AppLogger.print("response - ${response.toString()}");
       emit(RegisterSuccessState());
