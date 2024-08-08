@@ -1,4 +1,5 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/routers.dart';
@@ -8,6 +9,7 @@ import 'package:storeapp/Core/widgets/custom_button.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/member_or_not.dart';
+import 'package:storeapp/Features/auth/presentation/view_model/login_cubit/login_cubit.dart';
 
 class LoginViewContainerBody extends StatefulWidget {
   const LoginViewContainerBody({super.key});
@@ -17,15 +19,14 @@ class LoginViewContainerBody extends StatefulWidget {
 }
 
 class _LoginViewContainerBodyState extends State<LoginViewContainerBody> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
-  GlobalKey<FormState> formKey = GlobalKey();
+  bool secure = true;
+  IconData suffixIcon = Icons.visibility;
 
   @override
   Widget build(BuildContext context) {
+    var cubit = BlocProvider.of<LoginCubit>(context);
     return Form(
-      key: formKey,
+      key: cubit.formKey,
       child: Column(
         children: [
           const CustomTitleFormField(
@@ -38,7 +39,7 @@ class _LoginViewContainerBodyState extends State<LoginViewContainerBody> {
           CustomTextFormField(
             hintText: AppText.kHintTextEmailField,
             keyboardType: TextInputType.emailAddress,
-            controller: emailController,
+            controller: cubit.emailController,
             validator: (value) {
               return Validator.validateEmail(value);
             },
@@ -55,9 +56,17 @@ class _LoginViewContainerBodyState extends State<LoginViewContainerBody> {
           ),
           CustomTextFormField(
             hintText: AppText.kHintTextPasswordField,
-            controller: passwordController,
+            controller: cubit.passwordController,
             validator: (value) {
               return Validator.validatePassword(value);
+            },
+            secure: secure,
+            suffixIcon: suffixIcon,
+            suffixOnPressed: () {
+              setState(() {
+                secure = !secure;
+                suffixIcon = secure ? Icons.visibility : Icons.visibility_off;
+              });
             },
           ),
           const SizedBox(
@@ -67,7 +76,7 @@ class _LoginViewContainerBodyState extends State<LoginViewContainerBody> {
             textButton: AppText.kLogin,
             width: 174,
             onPressed: () {
-              if (formKey.currentState!.validate()) {
+              if (cubit.formKey.currentState!.validate()) {
                 GoRouter.of(context).pushReplacement(AppRouter.kSplashScreen);
               }
             },

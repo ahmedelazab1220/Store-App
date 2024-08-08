@@ -17,6 +17,22 @@ class ApiService {
     );
   }
 
+  Future<dynamic> post({
+    required String endpoint,
+    Map<String, dynamic>? data,
+  }) async {
+    dio.options.headers.addAll({
+      "Content-Type": "application/json",
+    });
+
+    var response = await dio.post(
+      endpoint,
+      data: data,
+    );
+
+    return response.data;
+  }
+
   Future<dynamic> postFormData({
     required String endpoint,
     required dynamic data,
@@ -28,14 +44,8 @@ class ApiService {
       "Content-Type": "multipart/form-data",
     });
 
-    try {
-      var response = await dio.post(endpoint, data: formData);
+    var response = await dio.post(endpoint, data: formData);
 
-      AppLogger.print(response.data['message']);
-
-      return response.data;
-    } on Exception catch (e) {
-      AppLogger.print(e.toString());
-    }
+    return response.data;
   }
 }

@@ -9,12 +9,12 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
   const RegisterViewAddressContainerBody({
     super.key,
     required this.cityController,
-    required this.countryController,
+    required this.stateController,
     required this.streetController,
     required this.zipCodeController,
   });
 
-  final TextEditingController countryController;
+  final TextEditingController stateController;
   final TextEditingController cityController;
   final TextEditingController streetController;
   final TextEditingController zipCodeController;
@@ -30,15 +30,15 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
                 children: [
                   const CustomTitleFormField(
                     image: AppImages.kAddressIcon,
-                    title: AppText.kCountry,
+                    title: AppText.kState,
                   ),
                   const SizedBox(
                     height: 7,
                   ),
                   CustomTextFormField(
-                    hintText: AppText.kHintTextCountryField,
+                    hintText: AppText.kHintTextStateField,
                     keyboardType: TextInputType.streetAddress,
-                    controller: countryController,
+                    controller: stateController,
                     validator: (value) {
                       return Validator.validateAddress(value);
                     },

@@ -46,14 +46,20 @@ dependencies:
   get_it: ^7.7.0
   go_router: ^14.2.1
   google_fonts: ^6.2.1
+  http_parser: 4.0.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   image_picker: ^1.1.2
   jwt_decoder: ^2.0.1
   simple_animations: ^5.0.2
   smooth_page_indicator: ^1.2.0
+  fluttertoast: ^8.2.6
   supercharged: ^2.1.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
+  build_runner: ^2.3.2 # to generate code (model)
+  hive_generator: ^2.0.0 # to provide in generate code for hive
   flutter_test:
     sdk: flutter
 

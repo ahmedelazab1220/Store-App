@@ -1,4 +1,5 @@
 abstract class AppText {
+  // ar
   static const String kAppName = 'MR,Candy';
   static const String kSkip = 'تخطي';
   static const String kNext = 'التالي';
@@ -32,12 +33,18 @@ abstract class AppText {
   static const String kPassword = 'كلمة المرور:';
   static const String kHintTextEmailField = 'ادخل البريد الالكتروني';
   static const String kHintTextPasswordField = 'ادخل كلمة المرور';
-  static const String kCountry = 'الدوله:';
+  static const String kState = 'الدوله:';
   static const String kCity = 'المدينة:';
   static const String kStreet = 'الشارع:';
   static const String kZipCode = 'الرمز البريدي: ';
-  static const String kHintTextCountryField = 'ادخل الدوله';
+  static const String kHintTextStateField = 'ادخل الدوله';
   static const String kHintTextCityField = 'ادخل المدينة';
   static const String kHintTextStreetField = 'ادخل الشارع';
   static const String kHintTextZipCodeField = 'ادخل الرمز البريدي';
+
+  // en
+  static const String kDoSuccessAccount =
+      'Your account has been successfully created, You can now log in.';
+  static const String kImageRequiredField =
+      'Image is required. Please upload it.';
 }

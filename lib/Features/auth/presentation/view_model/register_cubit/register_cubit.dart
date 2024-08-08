@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Features/auth/data/repos/auth_repo.dart';
 
@@ -14,32 +18,38 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
-  TextEditingController countryController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
   TextEditingController cityController = TextEditingController();
   TextEditingController streetController = TextEditingController();
   TextEditingController zipCodeController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
+  File? myFile;
   final AuthRepo authRepo;
 
   Future<void> register() async {
     emit(RegisterLoading());
 
-    try {
-      final response = await authRepo.register(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-        phoneNumber: phoneNumberController.text.trim(),
-        country: countryController.text.trim(),
-        street: streetController.text.trim(),
-        city: cityController.text.trim(),
-      );
-      AppLogger.print("response - ${response.toString()}");
+    var result = await authRepo.register(
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
+      phoneNumber: phoneNumberController.text.trim(),
+      state: stateController.text.trim(),
+      street: streetController.text.trim(),
+      city: cityController.text.trim(),
+      image: await MultipartFile.fromFile(
+        myFile!.path,
+        filename: "user.png",
+        contentType: MediaType("image", "svg+xml"),
+      ),
+      name: nameController.text.trim(),
+      zipCode: zipCodeController.text.trim(),
+    );
+
+    result.fold((l) => emit(RegisterFailureState(message: l.errorMessage)),
+        (r) {
+      AppLogger.print("response - ${result.toString()}");
       emit(RegisterSuccessState());
-    } on Exception catch (e) {
-      e.hashCode;
-      AppLogger.print(e.toString());
-      emit(const RegisterFailureState(message: 'Error Occurred'));
-    }
+    });
   }
 }

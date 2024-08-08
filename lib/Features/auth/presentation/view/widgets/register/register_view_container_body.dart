@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/text.dart';
+import 'package:storeapp/Core/utils/toast.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/member_or_not.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/register/custom_add_image.dart';
@@ -11,19 +12,27 @@ import 'package:storeapp/Features/auth/presentation/view/widgets/register/regist
 import 'package:storeapp/Features/auth/presentation/view/widgets/register/register_view_personal_container_body.dart';
 import 'package:storeapp/Features/auth/presentation/view_model/register_cubit/register_cubit.dart';
 
-class RegisterViewContainerBody extends StatefulWidget {
+class RegisterViewContainerBody extends StatelessWidget {
   const RegisterViewContainerBody({super.key});
 
   @override
-  State<RegisterViewContainerBody> createState() =>
-      _RegisterViewContainerBodyState();
-}
-
-class _RegisterViewContainerBodyState extends State<RegisterViewContainerBody> {
-  @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<RegisterCubit>(context);
-    return BlocBuilder<RegisterCubit, RegisterState>(
+    return BlocConsumer<RegisterCubit, RegisterState>(
+      listener: (context, state) {
+        if (state is RegisterSuccessState) {
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
+          showToast(
+            title: AppText.kDoSuccessAccount,
+            color: AppColors.kPrimaryColor,
+          );
+        } else if (state is RegisterFailureState) {
+          showToast(
+            title: state.message,
+            color: AppColors.red,
+          );
+        }
+      },
       builder: (context, state) {
         return CustomScrollView(
           slivers: [
@@ -43,7 +52,7 @@ class _RegisterViewContainerBodyState extends State<RegisterViewContainerBody> {
                     ),
                     RegisterViewAddressContainerBody(
                       cityController: cubit.cityController,
-                      countryController: cubit.countryController,
+                      stateController: cubit.stateController,
                       streetController: cubit.streetController,
                       zipCodeController: cubit.zipCodeController,
                     ),
@@ -58,6 +67,13 @@ class _RegisterViewContainerBodyState extends State<RegisterViewContainerBody> {
                       textButton: AppText.kRegister,
                       width: 174,
                       onPressed: () {
+                        if (cubit.myFile == null) {
+                          showToast(
+                            title: AppText.kImageRequiredField,
+                            color: AppColors.red,
+                          );
+                          return;
+                        }
                         if (cubit.formKey.currentState!.validate()) {
                           cubit.register();
                           /*GoRouter.of(context)
