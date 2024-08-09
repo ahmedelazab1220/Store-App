@@ -18,52 +18,53 @@ class RegisterViewContainerBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<RegisterCubit>(context);
-    return BlocConsumer<RegisterCubit, RegisterState>(
-      listener: (context, state) {
-        if (state is RegisterSuccessState) {
-          GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
-          showToast(
-            title: AppText.kDoSuccessAccount,
-            color: AppColors.kPrimaryColor,
-          );
-        } else if (state is RegisterFailureState) {
-          showToast(
-            title: state.message,
-            color: AppColors.red,
-          );
-        }
-      },
-      builder: (context, state) {
-        return CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Form(
-                key: cubit.formKey,
-                child: Column(
-                  children: [
-                    RegisterViewPersonalContainerBody(
-                      emailController: cubit.emailController,
-                      passwordController: cubit.passwordController,
-                      nameController: cubit.nameController,
-                      phoneController: cubit.phoneNumberController,
-                    ),
-                    const SizedBox(
-                      height: 38,
-                    ),
-                    RegisterViewAddressContainerBody(
-                      cityController: cubit.cityController,
-                      stateController: cubit.stateController,
-                      streetController: cubit.streetController,
-                      zipCodeController: cubit.zipCodeController,
-                    ),
-                    const SizedBox(
-                      height: 38,
-                    ),
-                    const CustomAddImage(),
-                    const SizedBox(
-                      height: 48,
-                    ),
-                    CustomButton(
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Form(
+            key: cubit.formKey,
+            child: Column(
+              children: [
+                RegisterViewPersonalContainerBody(
+                  emailController: cubit.emailController,
+                  passwordController: cubit.passwordController,
+                  nameController: cubit.nameController,
+                  phoneController: cubit.phoneNumberController,
+                ),
+                const SizedBox(
+                  height: 38,
+                ),
+                RegisterViewAddressContainerBody(
+                  cityController: cubit.cityController,
+                  stateController: cubit.stateController,
+                  streetController: cubit.streetController,
+                  zipCodeController: cubit.zipCodeController,
+                ),
+                const SizedBox(
+                  height: 38,
+                ),
+                const CustomAddImage(),
+                const SizedBox(
+                  height: 48,
+                ),
+                BlocConsumer<RegisterCubit, RegisterState>(
+                  listener: (context, state) {
+                    if (state is RegisterSuccessState) {
+                      GoRouter.of(context)
+                          .pushReplacement(AppRouter.kLoginScreen);
+                      showToast(
+                        title: AppText.kDoSuccessAccount,
+                        color: AppColors.kPrimaryColor,
+                      );
+                    } else if (state is RegisterFailureState) {
+                      showToast(
+                        title: state.message,
+                        color: AppColors.red,
+                      );
+                    }
+                  },
+                  builder: (context, state) {
+                    return CustomButton(
                       textButton: AppText.kRegister,
                       width: 174,
                       onPressed: () {
@@ -76,30 +77,27 @@ class RegisterViewContainerBody extends StatelessWidget {
                         }
                         if (cubit.formKey.currentState!.validate()) {
                           cubit.register();
-                          /*GoRouter.of(context)
-                              .pushReplacement(AppRouter.kSplashScreen);
-                          */
                         }
                       },
-                    ),
-                    const SizedBox(
-                      height: 51,
-                    ),
-                    MemberOrNot(
-                      text: AppText.kHaveAccount,
-                      textButton: AppText.kDoLogin,
-                      onPressed: () {
-                        GoRouter.of(context)
-                            .pushReplacement(AppRouter.kLoginScreen);
-                      },
-                    ),
-                  ],
+                    );
+                  },
                 ),
-              ),
+                const SizedBox(
+                  height: 51,
+                ),
+                MemberOrNot(
+                  text: AppText.kHaveAccount,
+                  textButton: AppText.kDoLogin,
+                  onPressed: () {
+                    GoRouter.of(context)
+                        .pushReplacement(AppRouter.kLoginScreen);
+                  },
+                ),
+              ],
             ),
-          ],
-        );
-      },
+          ),
+        ),
+      ],
     );
   }
 }

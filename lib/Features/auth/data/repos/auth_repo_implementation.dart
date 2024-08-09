@@ -22,7 +22,7 @@ class AuthRepoImplementation implements AuthRepo {
     required String password,
   }) async {
     try {
-      var response = await apiService.postFormData(
+      var response = await apiService.post(
         endpoint: AppApis.loginEndPoint,
         data: {
           "email": email,
@@ -65,10 +65,13 @@ class AuthRepoImplementation implements AuthRepo {
         decodedToken['Address']['street'],
       );
 
+      AppLogger.print(user.accessToken);
+
       return right(
         LoginModel.fromJson(response),
       );
     } on DioException catch (e) {
+      AppLogger.print(e.toString());
       return left(ServerFailure.fromDioException(e));
     }
   }
@@ -101,15 +104,11 @@ class AuthRepoImplementation implements AuthRepo {
         },
       );
 
-      final user = RegisterModel.fromJson(response);
-      final message = user.message;
-
-      AppLogger.print(message);
-
       return right(
         RegisterModel.fromJson(response),
       );
     } on DioException catch (e) {
+      AppLogger.print(e.toString());
       return left(ServerFailure.fromDioException(e));
     }
   }

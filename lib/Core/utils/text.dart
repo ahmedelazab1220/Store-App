@@ -47,4 +47,5 @@ abstract class AppText {
       'Your account has been successfully created, You can now log in.';
   static const String kImageRequiredField =
       'Image is required. Please upload it.';
+  static const String kWelcomeMessage = 'Welcome to Mr.Candy App';
 }

@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Features/auth/data/repos/auth_repo.dart';
@@ -51,5 +50,14 @@ class RegisterCubit extends Cubit<RegisterState> {
       AppLogger.print("response - ${result.toString()}");
       emit(RegisterSuccessState());
     });
+  }
+
+  bool secure = true;
+  IconData suffixIcon = Icons.visibility;
+
+  void changeSecure() {
+    secure = !secure;
+    suffixIcon = secure ? Icons.visibility : Icons.visibility_off;
+    emit(ChangePasswordVisibility());
   }
 }

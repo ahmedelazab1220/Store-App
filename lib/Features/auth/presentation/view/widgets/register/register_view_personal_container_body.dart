@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/validator.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
+import 'package:storeapp/Features/auth/presentation/view_model/register_cubit/register_cubit.dart';
 
-class RegisterViewPersonalContainerBody extends StatefulWidget {
+class RegisterViewPersonalContainerBody extends StatelessWidget {
   const RegisterViewPersonalContainerBody({
     super.key,
     required this.emailController,
@@ -21,17 +23,8 @@ class RegisterViewPersonalContainerBody extends StatefulWidget {
   final TextEditingController phoneController;
 
   @override
-  State<RegisterViewPersonalContainerBody> createState() =>
-      _RegisterViewPersonalContainerBodyState();
-}
-
-class _RegisterViewPersonalContainerBodyState
-    extends State<RegisterViewPersonalContainerBody> {
-  bool secure = true;
-  IconData suffixIcon = Icons.visibility;
-
-  @override
   Widget build(BuildContext context) {
+    var cubit = BlocProvider.of<RegisterCubit>(context);
     return Column(
       children: [
         const CustomTitleFormField(
@@ -44,7 +37,7 @@ class _RegisterViewPersonalContainerBodyState
         CustomTextFormField(
           hintText: AppText.kHintTextEmailField,
           keyboardType: TextInputType.emailAddress,
-          controller: widget.emailController,
+          controller: emailController,
           validator: (value) {
             return Validator.validateEmail(value);
           },
@@ -59,19 +52,20 @@ class _RegisterViewPersonalContainerBodyState
         const SizedBox(
           height: 7,
         ),
-        CustomTextFormField(
-          hintText: AppText.kHintTextPasswordField,
-          controller: widget.passwordController,
-          validator: (value) {
-            return Validator.validatePassword(value);
-          },
-          secure: secure,
-          suffixIcon: suffixIcon,
-          suffixOnPressed: () {
-            setState(() {
-              secure = !secure;
-              suffixIcon = secure ? Icons.visibility : Icons.visibility_off;
-            });
+        BlocBuilder<RegisterCubit, RegisterState>(
+          builder: (context, state) {
+            return CustomTextFormField(
+              hintText: AppText.kHintTextPasswordField,
+              controller: passwordController,
+              validator: (value) {
+                return Validator.validatePassword(value);
+              },
+              secure: cubit.secure,
+              suffixIcon: cubit.suffixIcon,
+              suffixOnPressed: () {
+                cubit.changeSecure();
+              },
+            );
           },
         ),
         const SizedBox(
@@ -87,7 +81,7 @@ class _RegisterViewPersonalContainerBodyState
         CustomTextFormField(
           hintText: AppText.kHintTextNameField,
           keyboardType: TextInputType.name,
-          controller: widget.nameController,
+          controller: nameController,
           validator: (value) {
             return Validator.validateName(value);
           },
@@ -105,7 +99,7 @@ class _RegisterViewPersonalContainerBodyState
         CustomTextFormField(
           hintText: AppText.kHintTextPhoneField,
           keyboardType: TextInputType.number,
-          controller: widget.phoneController,
+          controller: phoneController,
           validator: (value) {
             return Validator.validatePhone(value);
           },

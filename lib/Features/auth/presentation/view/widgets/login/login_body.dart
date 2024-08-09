@@ -5,14 +5,9 @@ import 'package:storeapp/Features/auth/presentation/view/widgets/fade_animation.
 import 'package:storeapp/Features/auth/presentation/view/widgets/custom_top_view.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/login/login_view_container.dart';
 
-class LoginBody extends StatefulWidget {
+class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
 
-  @override
-  State<LoginBody> createState() => _LoginBodyState();
-}
-
-class _LoginBodyState extends State<LoginBody> {
   @override
   Widget build(BuildContext context) {
     return FadeAnimation(

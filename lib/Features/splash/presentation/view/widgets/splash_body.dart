@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/colors.dart';
+import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Features/splash/presentation/view/widgets/sliding_text.dart';
@@ -49,7 +50,13 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).pushReplacement(AppRouter.kOnBoardingScreen);
+        if (AppHive.isOnBoarding() == null) {
+          GoRouter.of(context).pushReplacement(AppRouter.kOnBoardingScreen);
+        } else if (AppHive.getaccessToken() == null) {
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
+        } else {
+          GoRouter.of(context).pushReplacement(AppRouter.kRegisterScreen);
+        }
       },
     );
   }

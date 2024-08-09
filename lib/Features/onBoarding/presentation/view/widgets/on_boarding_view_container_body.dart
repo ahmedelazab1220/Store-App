@@ -2,6 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
@@ -68,6 +70,9 @@ class OnBoardingViewContainerBody extends StatelessWidget {
                           duration: const Duration(seconds: 1),
                         );
                   } else {
+                    Hive.box(AppHive.tokenAndOnBoardingBox)
+                        .put(AppHive.onBoarding, true);
+
                     GoRouter.of(context)
                         .pushReplacement(AppRouter.kLoginScreen);
                   }

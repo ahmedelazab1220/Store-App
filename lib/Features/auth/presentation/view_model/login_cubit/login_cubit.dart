@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:storeapp/Core/utils/hive.dart';
@@ -42,6 +41,6 @@ class LoginCubit extends Cubit<LoginState> {
   void changeSecure() {
     secure = !secure;
     suffixIcon = secure ? Icons.visibility : Icons.visibility_off;
-    emit(ChangePasswordVisiable());
+    emit(ChangePasswordVisibility());
   }
 }
