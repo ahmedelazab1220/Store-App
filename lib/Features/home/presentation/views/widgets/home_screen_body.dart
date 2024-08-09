@@ -12,30 +12,42 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const SafeArea(
-      child: CustomScrollView(
-        slivers: [
-
-          SliverToBoxAdapter(child: CustomAppbarHomeScreen()),
-
-          SliverToBoxAdapter(child: CrauserSliderBannerHomeScreen()),
-
-          SliverToBoxAdapter(child: SizedBox(height: 10,)),
-
-          SliverToBoxAdapter(child: CustomTextHomeScreen(text: AppText.companies)),
-
-          SliverToBoxAdapter(child: SizedBox(height: 10,)),
-
-          SliverToBoxAdapter(child: ListCompaniesHomScreen()),
-
-          SliverToBoxAdapter(child: SizedBox(height: 5,)),
-
-          SliverToBoxAdapter(child: CustomTextHomeScreen(text: "الأقسام",)),
-
-          GridViewSectionsHomeScreen(),
-
-        ]
-      ),
+    return const SafeArea(
+      child: CustomScrollView(slivers: [
+        SliverToBoxAdapter(
+          child: CustomAppbarHomeScreen(),
+        ),
+        SliverToBoxAdapter(
+          child: CrauserSliderBannerHomeScreen(),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 10,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: CustomTextHomeScreen(
+            text: AppText.companies,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 10,
+          ),
+        ),
+        SliverToBoxAdapter(child: ListCompaniesHomScreen()),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 5,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: CustomTextHomeScreen(
+            text: "الأقسام",
+          ),
+        ),
+        GridViewSectionsHomeScreen(),
+      ]),
     );
   }
 }
