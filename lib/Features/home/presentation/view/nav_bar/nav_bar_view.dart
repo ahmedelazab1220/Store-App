@@ -78,23 +78,22 @@ class _NavBarViewState extends State<NavBarView> {
         resizeToAvoidBottomInset: true,
         stateManagement: true,
         hideNavigationBarWhenKeyboardAppears: true,
+        navBarHeight: 78,
         decoration: NavBarDecoration(
           colorBehindNavBar: AppColors.white,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
           ),
-          border: Border.all(
-            color: Colors.transparent,
-            width: 0.5,
-          ),
           gradient: LinearGradient(
             colors: AppColors.gradientColors,
           ),
         ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 35.0,
-          vertical: 7,
+        padding: const EdgeInsets.only(
+          left: 45.0,
+          right: 45.0,
+          top: 24,
+          bottom: 6.0,
         ),
         popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
         animationSettings: const NavBarAnimationSettings(
