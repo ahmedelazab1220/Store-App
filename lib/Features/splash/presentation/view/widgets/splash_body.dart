@@ -55,7 +55,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
         } else if (AppHive.getaccessToken() == null) {
           GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
         } else {
-          GoRouter.of(context).pushReplacement(AppRouter.kRegisterScreen);
+          GoRouter.of(context).pushReplacement(AppRouter.kNavBarView);
         }
       },
     );

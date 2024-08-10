@@ -10,8 +10,8 @@ abstract class AppColors {
   static const Color grey = Color(0xFF9BA6A7);
   static const Color smoothIndicator = Color(0xFF6B1ECD);
   static List<Color> gradientColors = const [
-    Color(0xFF5028CD),
-    purple600,
+    Color(0xFF1A48BF),
+    Color(0xFF731BCD),
   ];
   static const Color kTransparent = Color(0xFF6A6565);
   static const Color kHintTextField = Color(0xFF5B5E5F);

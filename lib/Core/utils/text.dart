@@ -48,4 +48,9 @@ abstract class AppText {
   static const String kImageRequiredField =
       'Image is required. Please upload it.';
   static const String kWelcomeMessage = 'Welcome to Mr.Candy App';
+
+  static const String kMyAccount = 'حسابي';
+  static const String kCart = 'السلة';
+  static const String kDiscounts = 'الخصومات';
+  static const String kHome = 'الرئيسية';
 }
