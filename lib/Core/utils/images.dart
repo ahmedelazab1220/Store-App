@@ -18,4 +18,6 @@ abstract class AppImages {
       "assets/images/background-on-boarding.png";
   static const String kOnBoardingOneCirclePoint =
       "assets/images/onBoardingOneCriclePoint.svg";
+  static const String kBestSellerProducts =
+      'assets/images/best_seller_products.png';
 }

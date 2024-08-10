@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storeapp/Features/home/presentation/view/widgets/crauser_slider_banner.dart';
 import 'package:storeapp/Features/home/presentation/view/widgets/custom_app_bar.dart';
 
 class HomeBody extends StatelessWidget {
@@ -10,7 +11,10 @@ class HomeBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: CustomAppBar(),
-        )
+        ),
+        SliverToBoxAdapter(
+          child: CrauserSliderBanner(),
+        ),
       ],
     );
   }
