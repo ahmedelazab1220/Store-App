@@ -41,6 +41,11 @@ abstract class AppText {
   static const String kHintTextCityField = 'ادخل المدينة';
   static const String kHintTextStreetField = 'ادخل الشارع';
   static const String kHintTextZipCodeField = 'ادخل الرمز البريدي';
+  static const String kMyAccount = 'حسابي';
+  static const String kCart = 'السلة';
+  static const String kDiscounts = 'الخصومات';
+  static const String kHome = 'الرئيسية';
+  static const String kSearchForOrders = 'ابحث عن طلباتك';
 
   // en
   static const String kDoSuccessAccount =
@@ -48,9 +53,4 @@ abstract class AppText {
   static const String kImageRequiredField =
       'Image is required. Please upload it.';
   static const String kWelcomeMessage = 'Welcome to Mr.Candy App';
-
-  static const String kMyAccount = 'حسابي';
-  static const String kCart = 'السلة';
-  static const String kDiscounts = 'الخصومات';
-  static const String kHome = 'الرئيسية';
 }

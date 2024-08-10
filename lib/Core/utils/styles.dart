@@ -4,6 +4,11 @@ import 'package:storeapp/Core/utils/colors.dart';
 
 abstract class Styles {
   // font allura
+  static final textStyle22 = GoogleFonts.allura(
+    fontSize: 22,
+    fontWeight: FontWeight.w400,
+  );
+
   static final textStyle25 = GoogleFonts.allura(
     fontSize: 25,
     fontWeight: FontWeight.w400,
