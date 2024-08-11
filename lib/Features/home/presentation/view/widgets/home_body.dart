@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:storeapp/Features/home/presentation/view/widgets/crauser_slider_banner.dart';
+import 'package:storeapp/Core/utils/colors.dart';
+import 'package:storeapp/Core/utils/styles.dart';
+import 'package:storeapp/Features/home/presentation/view/widgets/carousel_slider_banner.dart';
+import 'package:storeapp/Features/home/presentation/view/widgets/category_list_view_container.dart';
+import 'package:storeapp/Features/home/presentation/view/widgets/company_list_view_container.dart';
 import 'package:storeapp/Features/home/presentation/view/widgets/custom_app_bar.dart';
 
 class HomeBody extends StatelessWidget {
@@ -7,14 +11,48 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: CustomAppBar(),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: CrauserSliderBanner(),
         ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              right: 17.0,
+              top: 20.0,
+            ),
+            child: Text(
+              'الشركات',
+              textDirection: TextDirection.rtl,
+              style: Styles.textStyle15.copyWith(
+                color: AppColors.kCategoryName,
+              ),
+            ),
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: CompanyListViewContainer(),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              right: 17.0,
+              top: 17.0,
+            ),
+            child: Text(
+              'الأقسام',
+              textDirection: TextDirection.rtl,
+              style: Styles.textStyle15.copyWith(
+                color: AppColors.kCategoryName,
+              ),
+            ),
+          ),
+        ),
+        const CategoryListViewContainer(),
       ],
     );
   }

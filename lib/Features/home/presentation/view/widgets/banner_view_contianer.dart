@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
@@ -34,10 +35,14 @@ class BannerViewContianer extends StatelessWidget {
           child: Row(
             children: [
               AspectRatio(
-                aspectRatio: 4 / 3,
-                child: Image.asset(
-                  bannerModel.image,
-                  fit: BoxFit.cover,
+                aspectRatio: 4 / 3.85,
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: bannerModel.image,
+                  placeholder: (context, url) => Container(
+                    color: AppColors.grey,
+                  ),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
               const SizedBox(width: 10),
@@ -80,32 +85,32 @@ class BannerViewContianer extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          right: 19,
-          bottom: 11,
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35),
-                  topRight: Radius.circular(0),
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(20)),
-              gradient: LinearGradient(
-                colors: [
-                  AppColors.bluePurpleColor,
-                  AppColors.purpleHeartColor,
-                ],
-              ),
-            ),
-            child: bannerModel.discount != null
-                ? Text(
+        bannerModel.discount != null
+            ? Positioned(
+                right: 19,
+                bottom: 11,
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(35),
+                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(20)),
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.bluePurpleColor,
+                        AppColors.purpleHeartColor,
+                      ],
+                    ),
+                  ),
+                  child: Text(
                     bannerModel.discount.toString(),
                     style: Styles.textStyle14,
-                  )
-                : const SizedBox(),
-          ),
-        ),
+                  ),
+                ),
+              )
+            : const SizedBox(),
       ],
     );
   }

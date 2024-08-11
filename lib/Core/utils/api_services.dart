@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 
 class ApiService {
-  final _baseUrl = "http://10.0.2.2:8080";
+  final _baseUrl = "https://0298-197-43-73-167.ngrok-free.app";
 
   late Dio dio;
 
@@ -15,6 +15,16 @@ class ApiService {
         },
       ),
     );
+  }
+
+  Future<dynamic> get({
+    required String endpoint,
+  }) async {
+    var response = await dio.get(
+      endpoint,
+    );
+
+    return response.data;
   }
 
   Future<dynamic> post({
