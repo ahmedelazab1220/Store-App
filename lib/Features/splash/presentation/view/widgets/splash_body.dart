@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/colors.dart';
+import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Features/splash/presentation/view/widgets/sliding_text.dart';
@@ -47,7 +50,13 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).pushReplacement(AppRouter.kOnBoardingScreen);
+        if (AppHive.isOnBoarding() == null) {
+          GoRouter.of(context).pushReplacement(AppRouter.kOnBoardingScreen);
+        } else if (AppHive.getaccessToken() == null) {
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginScreen);
+        } else {
+          GoRouter.of(context).pushReplacement(AppRouter.kNavBarView);
+        }
       },
     );
   }
@@ -60,7 +69,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(0.5, 0),
-            end: Alignment(-0.48, 0.81),
+            end: Alignment(-0.58, 0.71),
             colors: [
               AppColors.deepPurpleA700,
               AppColors.purple600,

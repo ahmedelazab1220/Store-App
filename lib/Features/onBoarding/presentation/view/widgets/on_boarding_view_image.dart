@@ -1,6 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/images.dart';
+import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
 
@@ -45,7 +49,15 @@ class OnBoardingViewImage extends StatelessWidget {
                             AppText.kSkip,
                             style: Styles.textStyle14,
                           ),
-                          onPressed: () {},
+                          onPressed: () async {
+                            await Hive.box(AppHive.tokenAndOnBoardingBox)
+                                .put(AppHive.onBoarding, true);
+
+                            if (context.mounted) {
+                              GoRouter.of(context)
+                                  .pushReplacement(AppRouter.kLoginScreen);
+                            }
+                          },
                         )
                       : const SizedBox(),
                   Expanded(
