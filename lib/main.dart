@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:storeapp/Core/utils/bloc_observer.dart';
 import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/injection_container.dart';
+import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 
 void main() async {
@@ -14,6 +15,12 @@ void main() async {
   await Hive.openBox(AppHive.userBox);
   Bloc.observer = SimpleBlocObserver();
   setup();
+
+  //await Hive.box(AppHive.userBox).clear();
+  //await Hive.box(AppHive.tokenAndOnBoardingBox).clear();
+
+  AppLogger.print(Hive.box(AppHive.userBox).get(AppHive.userImage));
+
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,

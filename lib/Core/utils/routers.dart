@@ -4,6 +4,7 @@ import 'package:storeapp/Features/auth/presentation/view/register_screen.dart';
 import 'package:storeapp/Features/home/presentation/view/home_screen.dart';
 import 'package:storeapp/Features/home/presentation/view/nav_bar/nav_bar_view.dart';
 import 'package:storeapp/Features/onBoarding/presentation/view/on_boarding_screen.dart';
+import 'package:storeapp/Features/profile/presentation/view/profile_screen.dart';
 import 'package:storeapp/Features/splash/presentation/view/splash_screen.dart';
 
 abstract class AppRouter {
@@ -13,6 +14,7 @@ abstract class AppRouter {
   static const String kRegisterScreen = '/RegisterScreen';
   static const String kNavBarView = '/NavBarView';
   static const String kHomeScreen = '/HomeScreen';
+  static const String kProfileScreen = '/ProfileScreen';
 
   static final router = GoRouter(
     routes: [
@@ -39,7 +41,11 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeScreen,
         builder: (context, state) => const HomeScreen(),
-      )
+      ),
+      GoRoute(
+        path: kProfileScreen,
+        builder: (context, state) => const ProfileScreen(),
+      ),
     ],
   );
 }

@@ -13,6 +13,7 @@ class ApiService {
         headers: {
           "accept": "*/*",
         },
+        connectTimeout: const Duration(seconds: 3),
       ),
     );
   }
