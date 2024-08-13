@@ -16,7 +16,7 @@ class HomeRepoImplementation extends HomeRepo {
   @override
   Future<Either<Failure, List<BannerModel>>> getBanners() async {
     try {
-      var response = await apiService.get(endpoint: AppApis.getBanners);
+      var response = await apiService.get(endpoint: AppApis.getBannersEndPoint);
 
       List<BannerModel> banners = [];
       for (var banner in response) {
@@ -37,7 +37,8 @@ class HomeRepoImplementation extends HomeRepo {
   @override
   Future<Either<Failure, List<CompanyModel>>> getCompanies() async {
     try {
-      var response = await apiService.get(endpoint: AppApis.getCompanies);
+      var response =
+          await apiService.get(endpoint: AppApis.getCompaniesEndPoint);
 
       List<CompanyModel> companies = [];
       for (var company in response) {
@@ -56,7 +57,8 @@ class HomeRepoImplementation extends HomeRepo {
   @override
   Future<Either<Failure, List<CategoryModel>>> getCategories() async {
     try {
-      var response = await apiService.get(endpoint: AppApis.getCategories);
+      var response =
+          await apiService.get(endpoint: AppApis.getCategoriesEndPoint);
 
       List<CategoryModel> categories = [];
       for (var category in response) {

@@ -5,6 +5,7 @@ import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Features/home/presentation/view/home_screen.dart';
+import 'package:storeapp/Features/profile/presentation/view/profile_screen.dart';
 
 class NavBarView extends StatefulWidget {
   const NavBarView({super.key});
@@ -21,7 +22,7 @@ class _NavBarViewState extends State<NavBarView> {
       const HomeScreen(),
       const HomeScreen(),
       const HomeScreen(),
-      const HomeScreen(),
+      const ProfileScreen(),
     ];
   }
 

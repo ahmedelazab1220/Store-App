@@ -70,7 +70,7 @@ class LoginViewContainerBody extends StatelessWidget {
           BlocConsumer<LoginCubit, LoginState>(
             listener: (context, state) {
               if (state is LoginSuccessState) {
-                GoRouter.of(context).pushReplacement(AppRouter.kRegisterScreen);
+                GoRouter.of(context).pushReplacement(AppRouter.kNavBarView);
                 showToast(
                   title: AppText.kWelcomeMessage,
                   color: AppColors.kPrimaryColor,

@@ -46,11 +46,20 @@ abstract class AppText {
   static const String kDiscounts = 'الخصومات';
   static const String kHome = 'الرئيسية';
   static const String kSearchForOrders = 'ابحث عن طلباتك';
-
+  static const String kEditProfile = 'تعديل الملف الشخصي';
+  static const String kSettings = 'الاعدادات';
+  static const String kLogOut = 'تسجيل الخروج';
+  static const String kBillingDetails = 'تفاصيل الفواتير';
+  static const String kUserManagement = 'إدارة المستخدمين';
+  static const String kInformation = 'معلومات';
+  static const String kUpdateUserImageSuccess = 'تم تحديث الصورة بنجاح';
+  static const String kUpdateUserImageFailure =
+      'عذرا فشل تحديث الصورة حاول مرة أخرى';
   // en
   static const String kDoSuccessAccount =
       'Your account has been successfully created, You can now log in.';
   static const String kImageRequiredField =
       'Image is required. Please upload it.';
   static const String kWelcomeMessage = 'Welcome to Mr.Candy App';
+  static const String kProfile = 'Profile';
 }
