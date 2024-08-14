@@ -8,20 +8,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/hive.dart';
-import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/toast.dart';
 import 'package:storeapp/Features/profile/presentation/view_model/profile_cubit/profile_cubit.dart';
 
-class ProfileBodyImage extends StatefulWidget {
+class ProfileBodyImage extends StatelessWidget {
   const ProfileBodyImage({super.key});
-
-  @override
-  State<ProfileBodyImage> createState() => _ProfileBodyImageState();
-}
-
-class _ProfileBodyImageState extends State<ProfileBodyImage> {
-  late File myFile;
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +75,7 @@ class _ProfileBodyImageState extends State<ProfileBodyImage> {
                         await picker.pickImage(source: ImageSource.camera);
 
                     if (image != null) {
-                      myFile = File(image.path);
-                      AppLogger.print("message: ${myFile.path}");
-                      cubit.myFile = myFile;
+                      cubit.myFile = File(image.path);
                       cubit.updateImage();
                     }
                   },

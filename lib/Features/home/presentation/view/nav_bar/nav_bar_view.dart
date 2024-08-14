@@ -4,6 +4,7 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
+import 'package:storeapp/Features/discounts/presentation/view/discounted_product_screen.dart';
 import 'package:storeapp/Features/home/presentation/view/home_screen.dart';
 import 'package:storeapp/Features/profile/presentation/view/profile_screen.dart';
 
@@ -20,7 +21,7 @@ class _NavBarViewState extends State<NavBarView> {
   List<Widget> _buildScreens() {
     return [
       const HomeScreen(),
-      const HomeScreen(),
+      const DiscountedProductScreen(),
       const HomeScreen(),
       const ProfileScreen(),
     ];
