@@ -34,6 +34,12 @@ abstract class Styles {
     color: AppColors.white,
   );
 
+  static final textStyle17 = GoogleFonts.almarai(
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+  );
+
   static final textStyle15 = GoogleFonts.almarai(
     fontSize: 15,
     fontWeight: FontWeight.w700,

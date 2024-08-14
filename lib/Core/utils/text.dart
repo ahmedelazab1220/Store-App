@@ -55,6 +55,10 @@ abstract class AppText {
   static const String kUpdateUserImageSuccess = 'تم تحديث الصورة بنجاح';
   static const String kUpdateUserImageFailure =
       'عذرا فشل تحديث الصورة حاول مرة أخرى';
+  static const String kNoDiscounts = 'لا توجد خصومات الان';
+  static const String kNoDiscountsDescription =
+      'نأسف لعدم وجود خصومات الان يرجي العودة في وقت لاحق';
+
   // en
   static const String kDoSuccessAccount =
       'Your account has been successfully created, You can now log in.';
