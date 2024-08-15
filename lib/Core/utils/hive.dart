@@ -15,6 +15,7 @@ class AppHive {
   static const String userStateAddress = 'userStateAddress';
   static const String userCityAddress = 'userCityAddress';
   static const String userStreetAddress = 'userStreetAddress';
+  static const String userZipCodeAddress = 'userZipCodeAddress';
 
   Future<void> openBox({required String boxName}) async {
     await Hive.openBox(boxName);

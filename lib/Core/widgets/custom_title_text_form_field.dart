@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 
-class CustomTitleFormField extends StatelessWidget {
-  const CustomTitleFormField({
+class CustomTitleTextFormField extends StatelessWidget {
+  const CustomTitleTextFormField({
     super.key,
     this.image,
     this.icon,

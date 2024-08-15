@@ -9,11 +9,15 @@ class CustomButton extends StatelessWidget {
     required this.textButton,
     this.onPressed,
     this.width,
+    this.height,
+    this.redius,
   });
 
   final void Function()? onPressed;
   final String textButton;
   final double? width;
+  final double? height;
+  final double? redius;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +26,11 @@ class CustomButton extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: AppColors.kPrimaryColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(redius ?? 8.0),
         ),
         minimumSize: Size(
           width ?? 164,
-          50,
+          height ?? 50,
         ),
       ),
       child: FadeInLeft(

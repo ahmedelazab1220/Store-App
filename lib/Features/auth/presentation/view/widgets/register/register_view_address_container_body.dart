@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/validator.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_text_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_title_text_form_field.dart';
 
 class RegisterViewAddressContainerBody extends StatelessWidget {
   const RegisterViewAddressContainerBody({
@@ -28,7 +28,7 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  const CustomTitleFormField(
+                  const CustomTitleTextFormField(
                     image: AppImages.kAddressIcon,
                     title: AppText.kState,
                   ),
@@ -52,7 +52,7 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  const CustomTitleFormField(
+                  const CustomTitleTextFormField(
                     image: AppImages.kAddressIcon,
                     title: AppText.kCity,
                   ),
@@ -80,7 +80,7 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  const CustomTitleFormField(
+                  const CustomTitleTextFormField(
                     image: AppImages.kAddressIcon,
                     title: AppText.kStreet,
                   ),
@@ -104,7 +104,7 @@ class RegisterViewAddressContainerBody extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  const CustomTitleFormField(
+                  const CustomTitleTextFormField(
                     image: AppImages.kAddressIcon,
                     title: AppText.kZipCode,
                   ),

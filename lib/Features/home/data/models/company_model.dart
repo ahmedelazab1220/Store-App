@@ -1,3 +1,5 @@
+import 'package:storeapp/Core/utils/app_apis.dart';
+
 class CompanyModel {
   final String name;
   final String image;
@@ -10,8 +12,7 @@ class CompanyModel {
   factory CompanyModel.fromJson(Map<String, dynamic> json) {
     return CompanyModel(
       name: json['name'],
-      image:
-          "https://0298-197-43-73-167.ngrok-free.app/api/v1/files?imageUrl=${json['imageUrl']}",
+      image: "${AppApis.getImages}${json['imageUrl']}",
     );
   }
 }

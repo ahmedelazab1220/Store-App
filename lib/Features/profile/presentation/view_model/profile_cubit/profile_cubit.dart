@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:storeapp/Core/utils/hive.dart';
@@ -14,6 +16,25 @@ class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit({required this.profileRepo}) : super(ProfileInitial());
 
   final ProfileRepo profileRepo;
+  TextEditingController nameController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userName),
+  );
+  TextEditingController phoneNumberController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userPhoneNumber),
+  );
+  TextEditingController cityController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userCityAddress),
+  );
+  TextEditingController stateController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userStateAddress),
+  );
+  TextEditingController streetController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userStreetAddress),
+  );
+  TextEditingController zipCodeController = TextEditingController(
+    text: Hive.box(AppHive.userBox).get(AppHive.userZipCodeAddress),
+  );
+  GlobalKey<FormState> formKey = GlobalKey();
 
   File? myFile;
 
@@ -36,6 +57,24 @@ class ProfileCubit extends Cubit<ProfileState> {
         (r) {
       AppLogger.print("response - ${result.toString()}");
       emit(UpdateProfileImageSuccess(imageUrl: r.image));
+    });
+  }
+
+  Future<void> updateProfile() async {
+    var result = await profileRepo.updateUserProfile(
+      name: nameController.text,
+      email: Hive.box(AppHive.userBox).get(AppHive.userEmail),
+      phoneNumber: phoneNumberController.text,
+      street: streetController.text,
+      city: cityController.text,
+      state: stateController.text,
+      zipCode: zipCodeController.text,
+    );
+
+    result.fold((l) => emit(UpdateProfileFailureSate(message: l.errorMessage)),
+        (r) {
+      AppLogger.print("response - ${result.toString()}");
+      emit(UpdateProfileSuccessSate());
     });
   }
 }

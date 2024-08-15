@@ -8,8 +8,8 @@ import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/toast.dart';
 import 'package:storeapp/Core/utils/validator.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_text_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_title_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view/widgets/member_or_not.dart';
 import 'package:storeapp/Features/auth/presentation/view_model/login_cubit/login_cubit.dart';
 
@@ -23,7 +23,7 @@ class LoginViewContainerBody extends StatelessWidget {
       key: cubit.formKey,
       child: Column(
         children: [
-          const CustomTitleFormField(
+          const CustomTitleTextFormField(
             icon: FontAwesomeIcons.envelope,
             title: AppText.kEmail,
           ),
@@ -41,7 +41,7 @@ class LoginViewContainerBody extends StatelessWidget {
           const SizedBox(
             height: 38,
           ),
-          const CustomTitleFormField(
+          const CustomTitleTextFormField(
             icon: FontAwesomeIcons.lock,
             title: AppText.kPassword,
           ),

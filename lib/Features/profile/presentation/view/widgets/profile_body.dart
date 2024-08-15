@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:storeapp/Core/utils/colors.dart';
+import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
 import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body_email_and_name.dart';
@@ -8,14 +10,16 @@ import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body
 import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body_options_list_tile.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({super.key});
+  const ProfileBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
         margin: const EdgeInsets.only(
-          top: 10.0,
+          top: 40.0,
         ),
         padding: const EdgeInsets.all(15.0),
         height: MediaQuery.of(context).size.height,
@@ -30,8 +34,11 @@ class ProfileBody extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const CustomButton(
+            CustomButton(
               textButton: AppText.kEditProfile,
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kEditProfileScreen);
+              },
             ),
             const SizedBox(
               height: 30,
