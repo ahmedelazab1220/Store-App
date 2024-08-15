@@ -1,3 +1,4 @@
+import 'package:storeapp/Core/utils/app_apis.dart';
 import 'package:storeapp/Core/utils/images.dart';
 
 class BannerModel {
@@ -18,8 +19,7 @@ class BannerModel {
   factory BannerModel.fromJson(Map<String, dynamic> json) {
     return BannerModel(
       id: json['id'],
-      image:
-          "https://0298-197-43-73-167.ngrok-free.app/api/v1/files?imageUrl=${json['imageUrl']}",
+      image: "${AppApis.getImages}${json['imageUrl']}",
       name: json['name'],
       description: json['description'],
       discount: json['discount'],

@@ -17,3 +17,11 @@ final class UpdateProfileImageFailure extends ProfileState {
 }
 
 final class UpdateProfileImageLoading extends ProfileState {}
+
+final class UpdateProfileFailureSate extends ProfileState {
+  final String message;
+
+  UpdateProfileFailureSate({required this.message});
+}
+
+final class UpdateProfileSuccessSate extends ProfileState {}

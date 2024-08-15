@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:storeapp/Core/utils/app_apis.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Features/discounts/data/models/discounted_product_model.dart';
@@ -42,7 +43,7 @@ class DiscountedProductListItem extends StatelessWidget {
                   child: CachedNetworkImage(
                     fit: BoxFit.contain,
                     imageUrl:
-                        "https://0298-197-43-73-167.ngrok-free.app/api/v1/files?imageUrl=${discountedProductModel.image}",
+                        "${AppApis.getImages}${discountedProductModel.image}",
                     placeholder: (context, url) => Container(
                       color: AppColors.grey,
                     ),

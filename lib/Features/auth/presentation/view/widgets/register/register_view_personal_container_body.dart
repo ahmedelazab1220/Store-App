@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/validator.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_text_form_field.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_text_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_title_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view_model/register_cubit/register_cubit.dart';
 
 class RegisterViewPersonalContainerBody extends StatelessWidget {
@@ -27,7 +27,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
     var cubit = BlocProvider.of<RegisterCubit>(context);
     return Column(
       children: [
-        const CustomTitleFormField(
+        const CustomTitleTextFormField(
           icon: FontAwesomeIcons.envelope,
           title: AppText.kEmail,
         ),
@@ -45,7 +45,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         const SizedBox(
           height: 38,
         ),
-        const CustomTitleFormField(
+        const CustomTitleTextFormField(
           icon: FontAwesomeIcons.lock,
           title: AppText.kPassword,
         ),
@@ -71,7 +71,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         const SizedBox(
           height: 38,
         ),
-        const CustomTitleFormField(
+        const CustomTitleTextFormField(
           image: AppImages.kPersonIcon,
           title: AppText.kName,
         ),
@@ -89,7 +89,7 @@ class RegisterViewPersonalContainerBody extends StatelessWidget {
         const SizedBox(
           height: 38,
         ),
-        const CustomTitleFormField(
+        const CustomTitleTextFormField(
           image: AppImages.kPhoneIcon,
           title: AppText.kPhoneNumber,
         ),

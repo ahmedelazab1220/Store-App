@@ -7,4 +7,8 @@ class AppApis {
   static const String updateUserImageEndPoint = '/api/v1/users/image';
   static const String getDiscountedProductEndPoint =
       '/api/v1/products/discount';
+  static const String updateUserProfile = '/api/v1/users';
+
+  static const String getImages =
+      'https://b9f2-197-43-73-167.ngrok-free.app/api/v1/files?imageUrl=';
 }

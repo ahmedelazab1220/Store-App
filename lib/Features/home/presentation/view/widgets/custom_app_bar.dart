@@ -4,7 +4,7 @@ import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
-import 'package:storeapp/Core/widgets/custom_search_app_bar.dart';
+import 'package:storeapp/Features/home/presentation/view/widgets/custom_search_app_bar.dart';
 import 'package:storeapp/Core/widgets/notification_icon.dart';
 
 class CustomAppBar extends StatelessWidget {

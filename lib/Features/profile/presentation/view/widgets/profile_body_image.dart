@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:storeapp/Core/utils/app_apis.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/text.dart';
@@ -50,7 +51,7 @@ class ProfileBodyImage extends StatelessWidget {
                 clipBehavior: Clip.hardEdge,
                 child: CachedNetworkImage(
                   imageUrl:
-                      "https://0298-197-43-73-167.ngrok-free.app/api/v1/files?imageUrl=${Hive.box(AppHive.userBox).get(AppHive.userImage)}",
+                      "${AppApis.getImages}${Hive.box(AppHive.userBox).get(AppHive.userImage)}",
                   placeholder: (context, url) => Container(
                     color: AppColors.grey,
                   ),

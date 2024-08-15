@@ -8,7 +8,7 @@ import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/images.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 import 'package:storeapp/Core/utils/text.dart';
-import 'package:storeapp/Features/auth/presentation/view/widgets/custom_title_form_field.dart';
+import 'package:storeapp/Core/widgets/custom_title_text_form_field.dart';
 import 'package:storeapp/Features/auth/presentation/view_model/register_cubit/register_cubit.dart';
 
 class CustomAddImage extends StatefulWidget {
@@ -27,7 +27,7 @@ class _CustomAddImageState extends State<CustomAddImage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const CustomTitleFormField(
+        const CustomTitleTextFormField(
           image: AppImages.kCopyIdCard,
           title: AppText.kCopyIDCard,
           mainAxisAlignment: MainAxisAlignment.center,

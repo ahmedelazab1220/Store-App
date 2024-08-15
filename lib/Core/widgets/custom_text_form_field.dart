@@ -12,6 +12,9 @@ class CustomTextFormField extends StatelessWidget {
     this.secure,
     this.suffixIcon,
     this.suffixOnPressed,
+    this.initialValue,
+    this.onChanged,
+    this.hintStyle,
   });
 
   final TextEditingController? controller;
@@ -21,23 +24,29 @@ class CustomTextFormField extends StatelessWidget {
   final bool? secure;
   final IconData? suffixIcon;
   final Function()? suffixOnPressed;
+  final String? initialValue;
+  final Function(String)? onChanged;
+  final TextStyle? hintStyle;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       controller: controller,
       validator: validator,
+      initialValue: initialValue,
       obscureText: secure ?? false,
       keyboardType: keyboardType,
       cursorColor: AppColors.grey,
       decoration: InputDecoration(
-        border: outlineInputBorder(),
-        enabledBorder: outlineInputBorder(),
-        focusedBorder: outlineInputBorder(),
+        border: outlineInputBorder(AppColors.kTextField),
+        enabledBorder: outlineInputBorder(AppColors.kTextField),
+        focusedBorder: outlineInputBorder(AppColors.kPrimaryColor),
         hintText: hintText,
-        hintStyle: Styles.textStyle11.copyWith(
-          color: AppColors.kHintTextField,
-        ),
+        hintStyle: hintStyle ??
+            Styles.textStyle11.copyWith(
+              color: AppColors.kHintTextField,
+            ),
         suffixIcon: suffixIcon != null
             ? IconButton(
                 onPressed: suffixOnPressed,
@@ -49,11 +58,11 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder outlineInputBorder() {
+  OutlineInputBorder outlineInputBorder(Color color) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.0),
       borderSide: BorderSide(
-        color: AppColors.kTextField,
+        color: color,
       ),
     );
   }
