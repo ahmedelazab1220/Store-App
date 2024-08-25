@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 
 class ApiService {
-  final _baseUrl = "https://b9f2-197-43-73-167.ngrok-free.app";
+  final _baseUrl = "https://ccca-197-43-150-249.ngrok-free.app";
 
   late Dio dio;
 
