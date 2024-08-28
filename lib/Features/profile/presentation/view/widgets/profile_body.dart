@@ -5,6 +5,7 @@ import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/routers.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/widgets/custom_button.dart';
+import 'package:storeapp/Features/profile/presentation/view/widgets/alert_dialog_confirm_logout.dart';
 import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body_email_and_name.dart';
 import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body_image.dart';
 import 'package:storeapp/Features/profile/presentation/view/widgets/profile_body_options_list_tile.dart';
@@ -78,7 +79,14 @@ class ProfileBody extends StatelessWidget {
               title: AppText.kLogOut,
               textColor: AppColors.red,
               icon: LineAwesomeIcons.sign_out_alt_solid,
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (c) {
+                    return const AlertDialogConfirmLogout();
+                  },
+                );
+              },
             ),
           ],
         ),
