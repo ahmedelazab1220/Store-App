@@ -26,7 +26,7 @@ class ProfileBodyEmailAndName extends StatelessWidget {
                   )
                 : const SizedBox(),
             const SizedBox(
-              height: 5,
+              height: 3,
             ),
             Text(
               Hive.box(AppHive.userBox).get(AppHive.userEmail),

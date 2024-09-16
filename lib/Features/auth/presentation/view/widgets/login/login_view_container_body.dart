@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/routers.dart';
+import 'package:storeapp/Core/utils/styles.dart';
 import 'package:storeapp/Core/utils/text.dart';
 import 'package:storeapp/Core/utils/toast.dart';
 import 'package:storeapp/Core/utils/validator.dart';
@@ -63,6 +64,20 @@ class LoginViewContainerBody extends StatelessWidget {
                 },
               );
             },
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: TextButton(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kForgetPasswordEmailScreen);
+              },
+              child: FittedBox(
+                child: Text(
+                  AppText.kForgetPassword,
+                  style: Styles.textStyle12,
+                ),
+              ),
+            ),
           ),
           const SizedBox(
             height: 48,

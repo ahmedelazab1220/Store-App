@@ -59,6 +59,8 @@ abstract class AppText {
   static const String kNoDiscountsDescription =
       'نأسف لعدم وجود خصومات الان يرجي العودة في وقت لاحق';
 
+  static const String kForgetPassword = 'هل نسيت كلمة المرور؟';
+
   // en
   static const String kDoSuccessAccount =
       'Your account has been successfully created, You can now log in.';
@@ -66,4 +68,5 @@ abstract class AppText {
       'Image is required. Please upload it.';
   static const String kWelcomeMessage = 'Welcome to Mr.Candy App';
   static const String kProfile = 'Profile';
+  static const String kEnterEmail = 'Enter Your Email Address';
 }

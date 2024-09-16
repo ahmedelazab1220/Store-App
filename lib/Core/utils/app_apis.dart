@@ -5,6 +5,7 @@ class AppApis {
   static const String getCompaniesEndPoint = '/api/v1/companies';
   static const String getCategoriesEndPoint = '/api/v1/categories';
   static const String updateUserImageEndPoint = '/api/v1/users/image';
+  static const String forgetPasswordAndVerifyOtp = '/api/v1/otps';
   static const String getDiscountedProductEndPoint =
       '/api/v1/products/discount';
   static const String updateUserProfile = '/api/v1/users';

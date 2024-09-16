@@ -4,6 +4,8 @@ import 'package:storeapp/Features/auth/presentation/view/register_screen.dart';
 import 'package:storeapp/Features/home/presentation/view/home_screen.dart';
 import 'package:storeapp/Features/home/presentation/view/nav_bar/nav_bar_view.dart';
 import 'package:storeapp/Features/onBoarding/presentation/view/on_boarding_screen.dart';
+import 'package:storeapp/Features/otps/presentation/view/otp_screen.dart';
+import 'package:storeapp/Features/otps/presentation/view/reset_password_email_screen.dart';
 import 'package:storeapp/Features/profile/presentation/view/edit_profile_screen.dart';
 import 'package:storeapp/Features/profile/presentation/view/profile_screen.dart';
 import 'package:storeapp/Features/splash/presentation/view/splash_screen.dart';
@@ -17,6 +19,10 @@ abstract class AppRouter {
   static const String kHomeScreen = '/HomeScreen';
   static const String kProfileScreen = '/ProfileScreen';
   static const String kEditProfileScreen = '/EditProfileScreen';
+  static const String kResetPasswordEmailScreen = '/ResetPasswordEmailScreen';
+  static const String kOtpScreen = '/OtpScreen';
+  static const String kResetPasswordScreen = '/ResetPasswordScreen';
+  static const String kForgetPasswordEmailScreen = '/ForgetPasswordEmailScreen';
 
   static final router = GoRouter(
     routes: [
@@ -51,6 +57,14 @@ abstract class AppRouter {
       GoRoute(
         path: kEditProfileScreen,
         builder: (context, state) => const EditProfileScreen(),
+      ),
+      GoRoute(
+        path: kForgetPasswordEmailScreen,
+        builder: (context, state) => const ForgetPasswordEmailScreen(),
+      ),
+      GoRoute(
+        path: kOtpScreen,
+        builder: (context, state) => const OtpScreen(),
       ),
     ],
   );
