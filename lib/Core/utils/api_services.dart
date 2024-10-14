@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:storeapp/Core/utils/hive.dart';
 import 'package:storeapp/Core/utils/loggers.dart';
 
 class ApiService {
-  final _baseUrl = "https://ccca-197-43-150-249.ngrok-free.app";
+  final _baseUrl = "http://10.0.2.2:8080";
 
   late Dio dio;
 
@@ -21,6 +22,11 @@ class ApiService {
   Future<dynamic> get({
     required String endpoint,
   }) async {
+    dio.options.headers.addAll({
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ${AppHive.getaccessToken()}",
+    });
+
     var response = await dio.get(
       endpoint,
     );
@@ -31,6 +37,7 @@ class ApiService {
   Future<dynamic> post({
     required String endpoint,
     Map<String, dynamic>? data,
+    Map<String, dynamic>? params,
   }) async {
     dio.options.headers.addAll({
       "Content-Type": "application/json",
@@ -39,6 +46,7 @@ class ApiService {
     var response = await dio.post(
       endpoint,
       data: data,
+      queryParameters: params,
     );
 
     return response.data;
@@ -50,6 +58,7 @@ class ApiService {
   }) async {
     dio.options.headers.addAll({
       "Content-Type": "application/json",
+      "Authorization": "Bearer ${AppHive.getaccessToken()}",
     });
 
     var response = await dio.put(
@@ -83,6 +92,7 @@ class ApiService {
     FormData formData = FormData.fromMap(data);
     dio.options.headers.addAll({
       "Content-Type": "multipart/form-data",
+      "Authorization": "Bearer ${AppHive.getaccessToken()}",
     });
 
     var response = await dio.put(endpoint, data: formData);

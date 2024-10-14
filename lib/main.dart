@@ -16,10 +16,10 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   setup();
 
-  //await Hive.box(AppHive.userBox).clear();
-  //await Hive.box(AppHive.tokenAndOnBoardingBox).clear();
+  await Hive.box(AppHive.userBox).clear();
+  await Hive.box(AppHive.tokenAndOnBoardingBox).clear();
 
-  AppLogger.print(Hive.box(AppHive.userBox).get(AppHive.userImage));
+  AppLogger.print(Hive.box(AppHive.userBox).get(AppHive.userName));
 
   runApp(
     /*DevicePreview(

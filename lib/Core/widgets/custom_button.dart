@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:storeapp/Core/utils/colors.dart';
 import 'package:storeapp/Core/utils/styles.dart';
@@ -11,6 +10,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height,
     this.redius,
+    this.color,
   });
 
   final void Function()? onPressed;
@@ -18,13 +18,14 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? redius;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        backgroundColor: AppColors.kPrimaryColor,
+        backgroundColor: color ?? AppColors.kPrimaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(redius ?? 8.0),
         ),
@@ -33,12 +34,9 @@ class CustomButton extends StatelessWidget {
           height ?? 50,
         ),
       ),
-      child: FadeInLeft(
-        duration: const Duration(seconds: 1),
-        child: Text(
-          textButton,
-          style: Styles.textStyle18,
-        ),
+      child: Text(
+        textButton,
+        style: Styles.textStyle18,
       ),
     );
   }

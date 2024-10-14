@@ -15,10 +15,13 @@ class CustomTextFormField extends StatelessWidget {
     this.initialValue,
     this.onChanged,
     this.hintStyle,
+    this.labelText,
+    this.labelStyle,
   });
 
   final TextEditingController? controller;
   final String hintText;
+  final String? labelText;
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final bool? secure;
@@ -27,6 +30,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? initialValue;
   final Function(String)? onChanged;
   final TextStyle? hintStyle;
+  final TextStyle? labelStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +47,8 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: outlineInputBorder(AppColors.kTextField),
         focusedBorder: outlineInputBorder(AppColors.kPrimaryColor),
         hintText: hintText,
+        labelText: labelText,
+        labelStyle: labelStyle,
         hintStyle: hintStyle ??
             Styles.textStyle11.copyWith(
               color: AppColors.kHintTextField,
